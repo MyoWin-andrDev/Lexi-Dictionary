@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/leftBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        style="@android:style/Widget.Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginStart="@dimen/three_x"
+        android:background="@drawable/left_icon"
+        android:backgroundTint="@color/blue"/>
+
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/leftBtn"
+        android:text="Log In"
+        android:textColor="@color/blue"
+        android:textSize="36sp"
+        android:layout_marginStart="@dimen/four_x"
+        android:layout_marginTop="@dimen/two_x"
+        android:fontFamily="@font/raleway_bold"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginText"
+        app:lottie_fileName="login_lottie.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lottieView"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/four_x"
+        android:layout_marginEnd="@dimen/four_x">
+<!--        Email Input-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Address"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:textStyle="bold"
+            android:textColor="@color/blue"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:layout_marginBottom="@dimen/three_x"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/login_focus_icon"
+                android:drawablePadding="@dimen/two_x"
+                android:hint="@string/lexiGmail"
+                android:textColorHint="@color/grey"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/login_focus_edit"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--Password Input        -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:textStyle="bold"
+            android:textColor="@color/blue"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/password_focus_icon"
+                android:drawablePadding="@dimen/two_x"
+                android:hint="Password123"
+                android:textColorHint="@color/grey"
+                android:inputType="textPassword"
+                android:background="@drawable/login_focus_edit"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

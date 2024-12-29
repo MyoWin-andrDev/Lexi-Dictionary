@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    False Stage-->
+    <item android:state_focused="false" android:drawable="@drawable/mail_icon_grey"/>
+
+    <!--    True Stage-->
+    <item android:state_focused="true" android:drawable="@drawable/mail_icon_blue"/>
+</selector>
