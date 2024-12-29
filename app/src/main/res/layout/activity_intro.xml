@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.IntroActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_fileName="intro_lottie.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:layout_marginTop="@dimen/eight_x"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lottieView"
+        android:layout_marginStart="@dimen/two_x"
+        android:layout_marginTop="@dimen/eight_x"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enhance"
+            android:textSize="38sp"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/raleway_medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Vocabulary"
+            android:textSize="38sp"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/raleway_medium"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/one_x"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="with Lexi"
+            android:textSize="38sp"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/raleway_medium"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/one_x"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        android:text="Where every word opens a new door to understanding and expression"
+        android:textSize="16sp"
+        android:maxLines="2"
+        android:layout_marginStart="@dimen/two_x"
+        android:layout_marginEnd="@dimen/two_x"
+        android:layout_marginTop="@dimen/one_x"
+        android:fontFamily="@font/nunito_sans_regular"
+        android:layout_gravity="center"
+        android:textColor="@color/grey"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greetingText"
+        android:text="Get Started"
+        android:textSize="20sp"
+        android:backgroundTint="@color/blue"
+        app:cornerRadius="@dimen/one_x"
+        android:padding="@dimen/two_x"
+        android:layout_marginStart="@dimen/two_x"
+        android:layout_marginEnd="@dimen/two_x"
+        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginBottom="@dimen/one_x"
+        android:fontFamily="@font/nunito_sans_regular"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

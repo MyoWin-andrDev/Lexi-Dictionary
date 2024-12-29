@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#4267B2</color> <!-- Facebook theme blue -->
+    <color name="orange">#FFA500</color> <!-- Adjusted to a more suitable orange -->
+    <color name="green">#4CAF50</color> <!-- Adjusted to a more suitable green -->
+    <color name="yellow">#FFC107</color> <!-- Adjusted to a more suitable yellow -->
+    <color name="red">#F44336</color> <!-- Adjusted to a more suitable red -->
+    <color name="grey">#9E9E9E</color> <!-- Grey font color for light text -->
 </resources>

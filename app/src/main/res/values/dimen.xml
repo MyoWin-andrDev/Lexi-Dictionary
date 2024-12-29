@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="one_x">8dp</dimen>
+    <dimen name="two_x">16dp</dimen>
+    <dimen name="three_x">24dp</dimen>
+    <dimen name="four_x">32dp</dimen>
+    <dimen name="five_x">40dp</dimen>
+    <dimen name="six_x">48dp</dimen>
+    <dimen name="seven_x">56dp</dimen>
+    <dimen name="eight_x">64dp</dimen>
+    <dimen name="nine_x">72dp</dimen>
+    <dimen name="ten_x">80dp</dimen>
+    <dimen name="eleven_x">88dp</dimen>
+    <dimen name="twelve_x">96dp</dimen>
+    <dimen name="thirteen_x">104dp</dimen>
+    <dimen name="fourteen_x">112dp</dimen>
+    <dimen name="fifteen_x">120dp</dimen>
+    <dimen name="sixteen_x">128dp</dimen>
+    <dimen name="seventeen_x">136dp</dimen>
+    <dimen name="eighteen_x">144dp</dimen>
+    <dimen name="nineteen_x">152dp</dimen>
+    <dimen name="twenty_x">160dp</dimen>
+</resources>
