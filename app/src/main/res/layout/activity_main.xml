@@ -15,35 +15,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/logo"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="lexi"
-        android:textColor="@color/white"
-        android:fontFamily="@font/opensans_regular"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        android:layout_marginTop="@dimen/two_x"/>
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/six_x"
         android:layout_marginStart="@dimen/three_x"
         android:layout_marginEnd="@dimen/three_x"
-        android:layout_marginTop="@dimen/two_x"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo"
-        android:background="@drawable/search_background"
-        android:drawableStart="@drawable/search_focus_icon"
-        android:drawableEnd="@drawable/clear_icon"
-        android:paddingStart="@dimen/two_x"
-        android:drawablePadding="@dimen/two_x"
-        android:paddingEnd="@dimen/two_x"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lexi"
+            android:textColor="@color/white"
+            android:fontFamily="@font/opensans_regular"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:layout_marginTop="@dimen/two_x"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/six_x"
+            android:layout_marginTop="@dimen/two_x"
+            android:background="@drawable/search_background"
+            android:drawableStart="@drawable/search_focus_icon"
+            android:drawableEnd="@drawable/clear_icon"
+            android:paddingStart="@dimen/two_x"
+            android:drawablePadding="@dimen/two_x"
+            android:paddingEnd="@dimen/two_x"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/suggestion_background"/>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

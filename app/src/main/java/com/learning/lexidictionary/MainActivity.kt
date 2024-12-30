@@ -1,56 +1,84 @@
 package com.learning.lexidictionary
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.learning.lexidictionary.apiService.DictionaryAPI
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.learning.lexidictionary.adapter.SuggestionList
+import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
-import com.learning.lexidictionary.model.DefinationData
-import com.learning.lexidictionary.model.DefinationDataItem
+import com.learning.lexidictionary.model.search.Result
+import com.learning.lexidictionary.model.search.WordSearch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
+    private lateinit var resultList : List<Result>
+    private lateinit var word : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        LoadDefination()
+        initLayoutManager()
+        initListener();
     }
 
-    fun LoadDefination(){
-        //Creating Retrofit Instance
-        val retrofit  = Retrofit.Builder()
-            .baseUrl("https://dictionaryapi.com/api/v3/references/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val apiService = retrofit.create(DictionaryAPI::class.java)
-        val call = apiService.getEntry("apple")
-        call.enqueue(object : Callback<DefinationData>{
-            override fun onResponse(
-                call: Call<DefinationData>,
-                response: Response<DefinationData>
-            ) {
-               // TODO("Not yet implemented")
-                if(response.isSuccessful){
-                    val word = response.body()
-                    Log.d("word",word.toString())
-                }
+    private fun initListener(){
+        binding.searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                TODO("Not yet implemented")
             }
 
-            override fun onFailure(call: Call<DefinationData>, t: Throwable) {
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+               word =  binding.searchBar.text!!.trim().toString()
+                loadWord(word)
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
                 TODO("Not yet implemented")
             }
 
         })
     }
+    private fun initLayoutManager() {
+       // TODO("Not yet implemented")
+        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+    }
+
+    fun loadWord(word : String){
+        //Creating Retrofit Instance
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://od-api-sandbox.oxforddictionaries.com/api/v2/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val apiService = retrofit.create(DictionaryService::class.java)
+        val call = apiService.searchWord(word)
+        call.enqueue(object : Callback<WordSearch> {
+            override fun onResponse(call: Call<WordSearch>, response: Response<WordSearch>) {
+              //  TODO("Not yet implemented")
+                if(response.isSuccessful){
+                    resultList = response.body()!!.results
+                    binding.recyclerView.adapter = SuggestionList(this@MainActivity, resultList)
+                }
+            }
+
+            override fun onFailure(call: Call<WordSearch>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
 }
