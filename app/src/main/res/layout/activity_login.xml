@@ -14,7 +14,7 @@
         style="@android:style/Widget.Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginTop="@dimen/six_x"
         android:layout_marginStart="@dimen/three_x"
         android:background="@drawable/left_icon"
         android:backgroundTint="@color/blue"/>
@@ -32,26 +32,33 @@
         android:layout_marginTop="@dimen/two_x"
         android:fontFamily="@font/raleway_bold"/>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <TextView
+        android:id="@+id/loginQuote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginText"
-        app:lottie_fileName="login_lottie.json"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true"/>
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginBottom="@dimen/three_x"
+        android:text="@string/loginQuote"
+        android:fontFamily="@font/raleway_regular"
+        android:textSize="18sp"
+        android:maxLines="1"
+        android:textColor="@color/blue"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lottieView"
+        app:layout_constraintTop_toBottomOf="@id/loginQuote"
         android:orientation="vertical"
         android:layout_marginStart="@dimen/four_x"
-        android:layout_marginEnd="@dimen/four_x">
+        android:layout_marginEnd="@dimen/four_x"
+        android:layout_marginTop="@dimen/three_x">
 <!--        Email Input-->
         <TextView
             android:layout_width="match_parent"
@@ -64,9 +71,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/seven_x"
             android:layout_marginTop="@dimen/one_x"
-            android:layout_marginBottom="@dimen/three_x"
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -90,11 +96,12 @@
             android:textSize="16sp"
             android:fontFamily="@font/nunito_sans_regular"
             android:textStyle="bold"
-            android:textColor="@color/blue"/>
+            android:textColor="@color/blue"
+            android:layout_marginTop="@dimen/two_x"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/seven_x"
             android:layout_marginTop="@dimen/one_x"
             app:hintEnabled="false">
 
@@ -110,8 +117,134 @@
 
 
         </com.google.android.material.textfield.TextInputLayout>
+<!--Remember Me & Forgot Password-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember me"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_sans_regular"
+                android:textStyle="bold"
+                android:textColor="@color/blackText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot password ?"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_sans_regular"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:layout_marginStart="@dimen/six_x"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login Now"
+            android:background="@drawable/intro_btn"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/one_x"
+            android:padding="@dimen/two_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:layout_marginBottom="@dimen/one_x"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <!--    OR line-->
+
+        <LinearLayout
+            android:id="@+id/viewLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_x"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_gravity="center"
+                android:layout_weight="1.25"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="OR"
+                android:gravity="center_horizontal"
+                android:textColor="@color/grey"
+                android:layout_weight="0.5"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_gravity="center"
+                android:layout_weight="1.25"/>
+
+        </LinearLayout>
+
+<!--        Login Suggestion Btn-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/one_x">
+        <!--Google Btn-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signinInGoogle"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:background="@drawable/signin_suggestion_btn"
+            android:drawableEnd="@drawable/google_icon"
+            android:paddingEnd="@dimen/three_x"
+            android:paddingStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/two_x"/>
+
+        <!--Facebook Btn-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signInFacebook"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:background="@drawable/signin_suggestion_btn"
+            android:drawableEnd="@drawable/facebook_icon"
+            android:paddingEnd="@dimen/three_x"
+            android:paddingStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/two_x"/>
+
+        <!--Google Btn-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:background="@drawable/intro_btn"
+            android:paddingEnd="@dimen/three_x"
+            android:paddingStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/two_x" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

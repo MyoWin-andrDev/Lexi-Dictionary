@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">LexiDictionary</string>
     <string name="lexiGmail">lexi********@gmail.com</string>
+    <string name="signinInGoogle">Sign in with Google</string>
+    <string name="signInFacebook">Sign in with Facebook</string>
+    <string name="loginQuote">To unlock the words of the world.</string>
 </resources>

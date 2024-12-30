@@ -16,6 +16,13 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initListener()
+    }
 
+    private fun initListener() {
+       // TODO("Not yet implemented")
+        binding.leftBtn.setOnClickListener(){
+            onBackPressed()
+        }
     }
 }

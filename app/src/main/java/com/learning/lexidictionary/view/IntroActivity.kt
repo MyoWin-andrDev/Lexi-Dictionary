@@ -1,5 +1,6 @@
 package com.learning.lexidictionary.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,5 +17,9 @@ class IntroActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityIntroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.getStartedBtn.setOnClickListener(){
+            val intent = Intent (this@IntroActivity, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
