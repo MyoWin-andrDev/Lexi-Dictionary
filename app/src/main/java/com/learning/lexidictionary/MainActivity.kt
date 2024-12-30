@@ -37,16 +37,16 @@ class MainActivity : AppCompatActivity() {
     private fun initListener(){
         binding.searchBar.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
+              //  TODO("Not yet implemented")
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-               word =  binding.searchBar.text!!.trim().toString()
+               word =  binding.searchBar.text?.trim().toString()
                 loadWord(word)
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                TODO("Not yet implemented")
+               // TODO("Not yet implemented")
             }
 
         })
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
               //  TODO("Not yet implemented")
                 if(response.isSuccessful){
                     resultList = response.body()!!.results
-                    binding.recyclerView.adapter = SuggestionList(this@MainActivity, resultList)
+                    binding.recyclerView.adapter = SuggestionList(this@MainActivity, resultList, word)
                 }
             }
 
