@@ -4,4 +4,5 @@
     <string name="signinInGoogle">Sign in with Google</string>
     <string name="signInFacebook">Sign in with Facebook</string>
     <string name="loginQuote">To unlock the words of the world.</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</string>
 </resources>

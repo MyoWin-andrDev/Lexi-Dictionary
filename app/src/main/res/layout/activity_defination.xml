@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DefinationActivity">
+<!--Word-->
+    <TextView
+        android:id="@+id/wordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="organization"
+        android:textColor="@color/blue"
+        android:textSize="28sp"
+        android:fontFamily="@font/raleway_medium"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/three_x"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/wordText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/wordText"
+            app:layout_constraintBottom_toBottomOf="@id/wordText"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+            <!--        Audio-->
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/audio_icon_click"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:layout_margin="@dimen/two_x"/>
+            <!--        Heart-->
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/heart_icon_click"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/two_x"
+                android:background="@android:color/transparent"/>
+            <!--        Copy-->
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/copy_icon"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/two_x"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+<!--    Phonetic -->
+        <TextView
+            android:id="@+id/phonetic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/ˌɔː.ɡən.aɪˈzeɪ.ʃən/"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/wordText"
+            app:layout_constraintTop_toBottomOf="@id/wordText"
+            android:layout_marginTop="@dimen/one_x"/>
+
+<!--    Defination-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phonetic"
+        android:layout_marginTop="@dimen/two_x"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginEnd="@dimen/three_x">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            android:padding="@dimen/two_x"
+            android:textSize="18sp"
+            android:background="@drawable/definition_background"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
