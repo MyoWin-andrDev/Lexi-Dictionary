@@ -7,14 +7,9 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import com.google.gson.Gson
-import com.learning.lexidictionary.adapter.SuggestionList
+import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
-import com.learning.lexidictionary.model.definition.WordDefinition
 import com.learning.lexidictionary.model.search.Result
 import com.learning.lexidictionary.model.search.WordSearch
 import retrofit2.Call
@@ -28,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var resultList : List<Result>
     private lateinit var word : String
     private val url : String = "https://od-api-sandbox.oxforddictionaries.com/api/v2/"
+    private lateinit var wordId : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -74,38 +70,12 @@ class MainActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     resultList = response.body()!!.results
                     Log.d("result",resultList.toString())
-                    binding.recyclerView.adapter = SuggestionList(this@MainActivity, resultList, word)
+                    binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, resultList, word)
                 }
             }
             override fun onFailure(call: Call<WordSearch>, t: Throwable) {
                // TODO("Not yet implemented")
                 Log.d("Error", "${t.message}")
-            }
-
-        })
-    }
-
-    fun loadDefinition(){
-        //Creating Retrofit Instance
-        val retrofit = Retrofit.Builder()
-            .baseUrl(url)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val apiService = retrofit.create(DictionaryService::class.java)
-        val call = apiService.getDefinition("apple")
-        call.enqueue(object : Callback<WordDefinition>{
-            override fun onResponse(
-                call: Call<WordDefinition>,
-                response: Response<WordDefinition>
-            ) {
-                //TODO("Not yet implemented")
-                if(response.isSuccessful){
-
-                }
-            }
-
-            override fun onFailure(call: Call<WordDefinition>, t: Throwable) {
-               // TODO("Not yet implemented")
             }
 
         })

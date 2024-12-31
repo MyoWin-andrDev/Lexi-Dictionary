@@ -1,7 +1,6 @@
 package com.learning.lexidictionary.model.definition
 
-data class GrammaticalFeature(
-    val id: String,
+data class Note(
     val text: String,
     val type: String
 )

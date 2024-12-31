@@ -1,7 +1,6 @@
 package com.learning.lexidictionary.model.definition
 
-data class CrossReference(
+data class Phrase(
     val id: String,
-    val text: String,
-    val type: String
+    val text: String
 )

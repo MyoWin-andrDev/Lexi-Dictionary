@@ -17,9 +17,9 @@ interface DictionaryService{
         @Header("app_key") key : String = "4e4d038084d005f2ea4ef0f617e921d0"
     ) : Call<WordSearch>
 
-    @GET("entries/en-gb/{searchQuery}")
+    @GET("words/en-gb")
     fun getDefinition(
-        @Path("searchQuery") search : String,
+        @Query("q") search : String,
         @Header("Accept") accept : String = "application/json",
         @Header("app_id") id : String = "819d7d21",
         @Header("app_key") key : String = "4e4d038084d005f2ea4ef0f617e921d0"
