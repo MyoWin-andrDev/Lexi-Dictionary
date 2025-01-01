@@ -11,7 +11,7 @@ import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
 import com.learning.lexidictionary.model.search.Result
-import com.learning.lexidictionary.model.search.WordSearch
+import com.learning.lexidictionary.model.search.SearchData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -63,9 +63,9 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val apiService = retrofit.create(DictionaryService::class.java)
-        val call = apiService.searchWord(word)
-        call.enqueue(object : Callback<WordSearch> {
-            override fun onResponse(call: Call<WordSearch>, response: Response<WordSearch>) {
+        val call = apiService.search(word)
+        call.enqueue(object : Callback<SearchData> {
+            override fun onResponse(call: Call<SearchData>, response: Response<SearchData>) {
               //  TODO("Not yet implemented")
                 if(response.isSuccessful){
                     resultList = response.body()!!.results
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                     binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, resultList, word)
                 }
             }
-            override fun onFailure(call: Call<WordSearch>, t: Throwable) {
+            override fun onFailure(call: Call<SearchData>, t: Throwable) {
                // TODO("Not yet implemented")
                 Log.d("Error", "${t.message}")
             }

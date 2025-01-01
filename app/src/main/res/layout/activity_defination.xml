@@ -91,108 +91,15 @@
             android:textStyle="bold"
             android:fontFamily="@font/opensans_medium"
             android:background="@drawable/definition_background"/>
-<!--        Noun-->
-        <LinearLayout
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/definitionRecycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/two_x"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:text="1"
-                android:fontFamily="@font/nunito_sans_regular"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/circleview"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/one_x"
-                android:text="Noun"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/nunito_sans_regular"/>
-
-        </LinearLayout>
-<!--        Sense Def-->
-        <TextView
-            android:id="@+id/senDefinition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
-
-        <TextView
-            android:id="@+id/senDefinition3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
-
-        <TextView
-            android:id="@+id/senDefinition1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
-
-        <TextView
-            android:id="@+id/senDefinition2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
-
-<!--        Phrases Layout-->
-        <LinearLayout
-            android:id="@+id/phrasesLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/two_x">
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/blue"/>
-<!--            Phrases-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="The Organication of this painting is quite remarkable"
-                android:fontFamily="@font/opensans_italic"
-                android:textStyle="bold"
-                android:drawableStart="@drawable/blue_view"
-                android:textColor="@color/grey_bright"
-                android:layout_marginStart="@dimen/one_x"/>
-
-
-        </LinearLayout>
+            android:layout_height="wrap_content"/>
 
 
 
-        
+
     </LinearLayout>
 
 

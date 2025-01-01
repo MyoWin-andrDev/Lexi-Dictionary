@@ -1,15 +1,17 @@
 package com.learning.lexidictionary.view
 
 import android.os.Bundle
+import android.security.identity.CredentialDataResult.Entries
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.learning.lexidictionary.R
+import com.learning.lexidictionary.adapter.DefinitionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
-import com.learning.lexidictionary.model.definition.WordDefinition
+import com.learning.lexidictionary.model.entries.EntriesData
+import com.learning.lexidictionary.model.word.WordData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,8 +25,11 @@ class DefinationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_defination)
+        binding = ActivityDefinationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         wordId = intent.getStringExtra("id").toString()
+        loadDefinition(wordId)
+        binding.definitionRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     fun loadDefinition(wordId : String){
@@ -34,17 +39,18 @@ class DefinationActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val apiService = retrofit.create(DictionaryService::class.java)
-        val call = apiService.getDefinition(wordId)
-        call.enqueue(object : Callback<WordDefinition> {
+        val call = apiService.entries(wordId)
+        call.enqueue(object : Callback<EntriesData> {
             override fun onResponse(
-                call: Call<WordDefinition>,
-                response: Response<WordDefinition>
+                call: Call<EntriesData>,
+                response: Response<EntriesData>
             ) {
                 //TODO("Not yet implemented")
                 if(response.isSuccessful){
                     val result = response.body()!!.results
                     val definition = result[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
                     val phrases = result[0].lexicalEntries[0].phrases
+                    binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinationActivity, result , wordId)
                     Log.d("definition", definition)
                     phrases.forEach { index ->
                         Log.d("$index", index.toString())
@@ -52,7 +58,7 @@ class DefinationActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<WordDefinition>, t: Throwable) {
+            override fun onFailure(call: Call<EntriesData>, t: Throwable) {
                 // TODO("Not yet implemented")
             }
 

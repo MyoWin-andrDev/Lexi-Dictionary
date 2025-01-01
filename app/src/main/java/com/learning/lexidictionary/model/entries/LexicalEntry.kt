@@ -1,4 +1,4 @@
-package com.learning.lexidictionary.model.definition
+package com.learning.lexidictionary.model.entries
 
 data class LexicalEntry(
     val entries: List<Entry>,

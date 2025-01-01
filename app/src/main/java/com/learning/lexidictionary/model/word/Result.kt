@@ -1,4 +1,4 @@
-package com.learning.lexidictionary.model.definition
+package com.learning.lexidictionary.model.word
 
 data class Result(
     val id: String,

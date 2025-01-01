@@ -1,6 +1,6 @@
-package com.learning.lexidictionary.model.definition
+package com.learning.lexidictionary.model.word
 
-data class WordDefinition(
+data class WordData(
     val metadata: Metadata,
     val query: String,
     val results: List<Result>

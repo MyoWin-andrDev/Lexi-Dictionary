@@ -1,34 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
+    <!--        Noun-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="@dimen/three_x"
+        android:layout_marginTop="@dimen/two_x"
         android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="1"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/circleview"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="organization"
-            android:textSize="28sp"
-            android:fontFamily="@font/raleway_regular"
-            android:textStyle="bold"/>
+            android:layout_marginStart="@dimen/one_x"
+            android:text="Noun"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_sans_regular"/>
 
-        <ImageButton
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/audio_icon_click"
-            android:contextClickable="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/two_x"/>
+    </LinearLayout>
+    <!--        Sense Def-->
+    <TextView
+        android:id="@+id/senDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="the act or process of organization"
+        android:textColor="@color/blackText"
+        android:fontFamily="@font/opensans_medium"
+        android:textSize="16sp"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/one_x"/>
+
+    <TextView
+        android:id="@+id/senShortDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="the act or process of organization"
+        android:textColor="@color/blackText"
+        android:fontFamily="@font/opensans_medium"
+        android:textSize="16sp"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/one_x"/>
+
+    <TextView
+        android:id="@+id/subSenDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="the act or process of organization"
+        android:textColor="@color/blackText"
+        android:fontFamily="@font/opensans_medium"
+        android:textSize="16sp"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/one_x"/>
+
+    <TextView
+        android:id="@+id/subSenShortDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="the act or process of organization"
+        android:textColor="@color/blackText"
+        android:fontFamily="@font/opensans_medium"
+        android:textSize="16sp"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/one_x"/>
+
+    <!--        Phrases Layout-->
+    <LinearLayout
+        android:id="@+id/phrasesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/two_x">
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@color/blue"/>
+        <!--            Phrases-->
+        <TextView
+            android:id="@+id/phrases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The Organication of this painting is quite remarkable"
+            android:fontFamily="@font/opensans_italic"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/blue_view"
+            android:textColor="@color/grey_bright"
+            android:layout_marginStart="@dimen/one_x"/>
+
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

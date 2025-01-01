@@ -1,0 +1,25 @@
+Overview
+This section provides a high-level introduction to the Oxford Dictionaries API.
+
+Endpoints
+The main functionalities available through the API are listed here:
+
+Entries: Allows you to retrieve information about specific dictionary entries, such as definitions, pronunciations, and examples.
+
+Lemmas: Provides access to lemma-level information, which is the canonical form of a word.
+
+Inflections: Retrieves information about the inflected forms of a word, such as plurals, past tenses, etc.
+
+Search: Enables searching for words and retrieving relevant results.
+
+Translations: Allows you to translate words between different languages.
+
+Thesaurus: Provides access to thesaurus-related data, such as synonyms and antonyms.
+
+Sentences: Retrieves example sentences for a given word.
+
+Words: Offers access to detailed information about individual words.
+
+Utility: Includes various utility functions, such as retrieving a list of available languages.
+
+Pronunciations (Coming Soon): This endpoint will provide access to pronunciation data, which is currently listed as "Coming Soon".
