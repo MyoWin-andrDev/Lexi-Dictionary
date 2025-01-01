@@ -18,7 +18,7 @@ class IntroActivity : AppCompatActivity() {
         binding = ActivityIntroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.getStartedBtn.setOnClickListener(){
-            val intent = Intent (this@IntroActivity, LoginActivity::class.java)
+            val intent = Intent( this@IntroActivity, LoginActivity::class.java)
             startActivity(intent)
         }
     }

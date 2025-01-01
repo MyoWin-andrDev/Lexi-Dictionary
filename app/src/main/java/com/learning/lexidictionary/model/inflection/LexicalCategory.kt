@@ -1,4 +1,4 @@
-package com.learning.lexidictionary.model.entries
+package com.learning.lexidictionary.model.inflection
 
 data class LexicalCategory(
     val id: String,

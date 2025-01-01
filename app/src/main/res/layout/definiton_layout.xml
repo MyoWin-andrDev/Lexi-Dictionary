@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
@@ -33,16 +33,16 @@
 
     </LinearLayout>
     <!--        Sense Def-->
-    <TextView
-        android:id="@+id/senDefinition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="the act or process of organization"
-        android:textColor="@color/blackText"
-        android:fontFamily="@font/opensans_medium"
-        android:textSize="16sp"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginTop="@dimen/one_x"/>
+<!--    <TextView-->
+<!--        android:id="@+id/senDefinition"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="the act or process of organization"-->
+<!--        android:textColor="@color/blackText"-->
+<!--        android:fontFamily="@font/opensans_medium"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginStart="@dimen/three_x"-->
+<!--        android:layout_marginTop="@dimen/one_x"/>-->
 
     <TextView
         android:id="@+id/senShortDefinition"
@@ -64,7 +64,7 @@
         android:fontFamily="@font/opensans_medium"
         android:textSize="16sp"
         android:layout_marginStart="@dimen/three_x"
-        android:layout_marginTop="@dimen/one_x"/>
+        android:layout_marginTop="@dimen/two_x"/>
 
     <TextView
         android:id="@+id/subSenShortDefinition"
@@ -75,11 +75,22 @@
         android:fontFamily="@font/opensans_medium"
         android:textSize="16sp"
         android:layout_marginStart="@dimen/three_x"
-        android:layout_marginTop="@dimen/one_x"/>
+        android:layout_marginTop="@dimen/two_x"/>
 
-    <!--        Phrases Layout-->
+    <TextView
+        android:id="@+id/phrasesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/two_x"
+        android:text="Phrases"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/nunito_sans_regular"/>
+
+    <!--        Phrases Box-->
     <LinearLayout
-        android:id="@+id/phrasesLayout"
+        android:id="@+id/phrasesBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -91,16 +102,64 @@
             android:layout_height="match_parent"
             android:background="@color/blue"/>
         <!--            Phrases-->
-        <TextView
-            android:id="@+id/phrases"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The Organication of this painting is quite remarkable"
-            android:fontFamily="@font/opensans_italic"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/blue_view"
-            android:textColor="@color/grey_bright"
-            android:layout_marginStart="@dimen/one_x"/>
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/phrases1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The Organication of this painting is quite remarkable"
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/blue_view"
+                android:textColor="@color/grey_bright"
+                android:layout_marginStart="@dimen/one_x"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/phrases2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Organication of this painting is quite remarkable"
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/blue_view"
+                android:textColor="@color/grey_bright"
+                android:layout_marginStart="@dimen/one_x"
+                android:layout_marginTop="@dimen/one_x"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/phrases3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Organication of this painting is quite remarkable"
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/blue_view"
+                android:textColor="@color/grey_bright"
+                android:layout_marginStart="@dimen/one_x"
+                android:layout_marginTop="@dimen/one_x"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/phrases4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Organication of this painting is quite remarkable"
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/blue_view"
+                android:textColor="@color/grey_bright"
+                android:layout_marginStart="@dimen/one_x"
+                android:layout_marginTop="@dimen/one_x"
+                android:visibility="gone"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>

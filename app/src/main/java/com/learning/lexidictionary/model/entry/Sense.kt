@@ -1,4 +1,4 @@
-package com.learning.lexidictionary.model.entries
+package com.learning.lexidictionary.model.entry
 
 data class Sense(
     val definitions: List<String>,

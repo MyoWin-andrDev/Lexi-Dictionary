@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DefinationActivity">
+    tools:context=".view.DefinitionActivity">
 <!--Word-->
     <TextView
         android:id="@+id/wordText"
@@ -14,17 +14,19 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="organization"
+        android:text="apple"
         android:textColor="@color/blue"
         android:textSize="28sp"
         android:fontFamily="@font/raleway_medium"
         android:textStyle="bold"
-        android:layout_margin="@dimen/three_x"/>
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginEnd="@dimen/three_x"
+        android:layout_marginBottom="@dimen/three_x"
+        android:layout_marginTop="@dimen/five_x" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/wordText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/wordText"
             app:layout_constraintBottom_toBottomOf="@id/wordText"
@@ -62,7 +64,7 @@
             android:id="@+id/phonetic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="/ˌɔː.ɡən.aɪˈzeɪ.ʃən/"
+            android:text="/ˈæp.əl/"
             android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="@id/wordText"
@@ -71,6 +73,7 @@
 
 <!--    Defination-->
     <LinearLayout
+        android:id="@+id/definitionBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,15 +95,18 @@
             android:fontFamily="@font/opensans_medium"
             android:background="@drawable/definition_background"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/definitionRecycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-
-
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/definitionRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/definitionBox"
+        app:layout_constraintEnd_toEndOf="@id/definitionBox"
+        app:layout_constraintTop_toBottomOf="@id/definitionBox"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginEnd="@dimen/three_x"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

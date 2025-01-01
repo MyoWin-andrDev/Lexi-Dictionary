@@ -1,9 +1,8 @@
-package com.learning.lexidictionary.model.entries
+package com.learning.lexidictionary.model.inflection
 
 data class Result(
     val id: String,
     val language: String,
     val lexicalEntries: List<LexicalEntry>,
-    val type: String,
-    val word: String
+    val text: String
 )

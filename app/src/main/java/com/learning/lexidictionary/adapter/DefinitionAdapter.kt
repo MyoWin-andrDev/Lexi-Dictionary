@@ -3,9 +3,10 @@ package com.learning.lexidictionary.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
-import com.learning.lexidictionary.model.entries.Result
+import com.learning.lexidictionary.model.entry.Result
 
 class DefinitionAdapter(val context : Context, val resultList : List<Result>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
     val lexicalEntry = resultList[0].lexicalEntries
@@ -28,14 +29,48 @@ class DefinitionAdapter(val context : Context, val resultList : List<Result>, va
     override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
       //  TODO("Not yet implemented")
         val index = lexicalEntry[position]
-        holder.binding.senDefinition.text = index.entries[position].senses[position].definitions[position]
-        holder.binding.senShortDefinition.text = index.entries[position].senses[position].shortDefinitions[position]
-        val phrasesList = index.phrases.size
-//         phrasesList.forEach { index ->
-//            holder.binding.phrases.text = index.toString()
-//        }
-        for(i in 0 until phrasesList){
-            holder.binding.phrases.text = index.phrases[i].text
+        val getSenses = index.entries[position].senses[position]
+       // holder.binding.senDefinition.text = getSenses.definitions[0]
+        holder.binding.senShortDefinition.text = getSenses.shortDefinitions[0]
+        holder.binding.subSenDefinition.text = getSenses.subsenses[position].definitions[0]
+        holder.binding.subSenShortDefinition.text = getSenses.subsenses[position].shortDefinitions[0]
+
+        //Retrieving Phrases
+        val phrasesList = index.phrases
+        val phrasesSize = phrasesList.size
+
+        when(phrasesSize){
+            1 -> {
+                holder.binding.phrases1.isVisible = true
+                holder.binding.phrases1.text = phrasesList[0].text
+            }
+            2 -> {
+                holder.binding.phrases1.isVisible = true
+                holder.binding.phrases1.text = phrasesList[0].text
+                holder.binding.phrases2.isVisible = true
+                holder.binding.phrases2.text = phrasesList[1].text
+            }
+            3 -> {
+                holder.binding.phrases1.isVisible = true
+                holder.binding.phrases1.text = phrasesList[0].text
+                holder.binding.phrases2.isVisible = true
+                holder.binding.phrases2.text = phrasesList[1].text
+                holder.binding.phrases3.isVisible = true
+                holder.binding.phrases3.text = phrasesList[2].text
+            }
+            4 -> {
+                holder.binding.phrases1.isVisible = true
+                holder.binding.phrases1.text = phrasesList[0].text
+                holder.binding.phrases2.isVisible = true
+                holder.binding.phrases2.text = phrasesList[1].text
+                holder.binding.phrases3.isVisible = true
+                holder.binding.phrases3.text = phrasesList[2].text
+                holder.binding.phrases4.isVisible = true
+                holder.binding.phrases4.text = phrasesList[3].text
+            }
+
         }
     }
+
+
 }

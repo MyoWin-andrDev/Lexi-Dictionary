@@ -1,10 +1,12 @@
 package com.learning.lexidictionary.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.learning.lexidictionary.MainActivity
 import com.learning.lexidictionary.R
 import com.learning.lexidictionary.databinding.ActivityIntroBinding
 import com.learning.lexidictionary.databinding.ActivityLoginBinding
@@ -23,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
        // TODO("Not yet implemented")
         binding.leftBtn.setOnClickListener(){
             onBackPressed()
+        }
+        binding.loginBtn.setOnClickListener(){
+            val intent = Intent( this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

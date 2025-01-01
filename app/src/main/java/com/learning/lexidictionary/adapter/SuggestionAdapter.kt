@@ -9,11 +9,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.learning.lexidictionary.MainActivity
 import com.learning.lexidictionary.R
 import com.learning.lexidictionary.databinding.SuggestionLayoutBinding
 import com.learning.lexidictionary.model.search.Result
-import com.learning.lexidictionary.view.DefinationActivity
+import com.learning.lexidictionary.view.DefinitionActivity
 
 class SuggestionAdapter(private val context: Context, val wordList : List<Result>, val inputWord : String) : RecyclerView.Adapter<SuggestionAdapter.SuggestionViewHolder>(){
 
@@ -40,11 +39,11 @@ class SuggestionAdapter(private val context: Context, val wordList : List<Result
         holder.binding.word.text = highlightSearchQuery( label, inputWord )
         holder.binding.word.setOnClickListener(){
             val getId = wordList[0].id
-            val intent = Intent(context, DefinationActivity::class.java)
+            val intent = Intent(context, DefinitionActivity::class.java)
             val query = holder.binding.word.text
             intent.putExtra("id", query)
+            Log.d("id",query.toString())
             context.startActivity(intent)
-            Log.d("getId",getId)
         }
     }
 
