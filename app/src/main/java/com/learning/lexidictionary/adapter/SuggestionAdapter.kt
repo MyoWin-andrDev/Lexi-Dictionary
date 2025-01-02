@@ -11,10 +11,9 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.R
 import com.learning.lexidictionary.databinding.SuggestionLayoutBinding
-import com.learning.lexidictionary.model.search.Result
 import com.learning.lexidictionary.view.DefinitionActivity
 
-class SuggestionAdapter(private val context: Context, val wordList : List<Result>, val inputWord : String) : RecyclerView.Adapter<SuggestionAdapter.SuggestionViewHolder>(){
+class SuggestionAdapter(private val context: Context, val stemList : List<String>, val inputWord : String) : RecyclerView.Adapter<SuggestionAdapter.SuggestionViewHolder>(){
 
     class SuggestionViewHolder(val binding : SuggestionLayoutBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -29,20 +28,18 @@ class SuggestionAdapter(private val context: Context, val wordList : List<Result
 
     override fun getItemCount(): Int {
        // TODO("Not yet implemented")
-        return wordList.size
+        return stemList.size
     }
 
     override fun onBindViewHolder(holder: SuggestionViewHolder, position: Int) {
        // TODO("Not yet implemented")
-        val definition = wordList[position]
-        val label = definition.label
+        val stemWord = stemList[position]
+        val label = stemWord
         holder.binding.word.text = highlightSearchQuery( label, inputWord )
         holder.binding.word.setOnClickListener(){
-            val getId = wordList[0].id
             val intent = Intent(context, DefinitionActivity::class.java)
             val query = holder.binding.word.text
-            intent.putExtra("id", query)
-            Log.d("id",query.toString())
+            intent.putExtra("id", label)
             context.startActivity(intent)
         }
     }

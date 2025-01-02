@@ -1,17 +1,18 @@
 package com.learning.lexidictionary
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
-import com.learning.lexidictionary.model.search.Result
-import com.learning.lexidictionary.model.search.SearchData
+import com.learning.lexidictionary.model.learnerEdition.LearnerData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,10 +21,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
-    private lateinit var resultList : List<Result>
+    private lateinit var learnerDataList : List<LearnerData>
     private lateinit var word : String
-    private val url : String = "https://od-api-sandbox.oxforddictionaries.com/api/v2/"
-    private lateinit var wordId : String
+    private val url : String = "https://dictionaryapi.com/api/v3/references/"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,15 +34,17 @@ class MainActivity : AppCompatActivity() {
         initListener();
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun initListener(){
-        binding.searchBar.addTextChangedListener(object : TextWatcher {
+        val searchBar = binding.searchBar
+        searchBar.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
               //  TODO("Not yet implemented")
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-               word =  binding.searchBar.text?.trim().toString()
-                loadWord(word)
+               word =  searchBar.text?.trim().toString()
+                loadResultList(word)
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -49,13 +52,25 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+        // Clear_Icon
+        searchBar.setOnTouchListener { _, motionEvent ->
+            if(motionEvent.action == MotionEvent.ACTION_DOWN) {
+                if (motionEvent.rawX >= (searchBar.right -
+                            searchBar.compoundDrawables[2].bounds.width())
+                ) {
+                    searchBar.text!!.clear()
+                    return@setOnTouchListener true
+                }
+            }
+            false
+        }
     }
     private fun initLayoutManager() {
        // TODO("Not yet implemented")
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
-    fun loadWord(word : String){
+    fun loadResultList(word : String){
         //Creating Retrofit Instance
         val retrofit = Retrofit.Builder()
             .baseUrl(url)
@@ -63,17 +78,19 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val apiService = retrofit.create(DictionaryService::class.java)
-        val call = apiService.search(word)
-        call.enqueue(object : Callback<SearchData> {
-            override fun onResponse(call: Call<SearchData>, response: Response<SearchData>) {
+        val call = apiService.getLearnerResult(word)
+        call.enqueue(object : Callback<LearnerData> {
+            override fun onResponse(call: Call<LearnerData>, response: Response<LearnerData>) {
               //  TODO("Not yet implemented")
                 if(response.isSuccessful){
-                    resultList = response.body()!!.results
-                    Log.d("result",resultList.toString())
-                    binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, resultList, word)
+                    val resultList  = response.body()!![0]
+                    //Related Word List
+                    val stemList = resultList.meta.stems
+                    Log.d("stemList", stemList.toString())
+                    binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, stemList, word)
                 }
             }
-            override fun onFailure(call: Call<SearchData>, t: Throwable) {
+            override fun onFailure(call: Call<LearnerData>, t: Throwable) {
                // TODO("Not yet implemented")
                 Log.d("Error", "${t.message}")
             }
