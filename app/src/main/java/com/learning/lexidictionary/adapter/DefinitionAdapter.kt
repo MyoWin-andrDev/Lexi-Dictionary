@@ -1,6 +1,7 @@
 package com.learning.lexidictionary.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
@@ -37,7 +38,9 @@ class DefinitionAdapter(val context : Context, val resultList : List<Result>, va
 
         //Retrieving Phrases
         val phrasesList = index.phrases
+        Log.d("phrasesList", phrasesList.toString())
         val phrasesSize = phrasesList.size
+        Log.d("size", phrasesSize.toString())
 
         when(phrasesSize){
             1 -> {
@@ -58,7 +61,7 @@ class DefinitionAdapter(val context : Context, val resultList : List<Result>, va
                 holder.binding.phrases3.isVisible = true
                 holder.binding.phrases3.text = phrasesList[2].text
             }
-            4 -> {
+            in 4 .. 10-> {
                 holder.binding.phrases1.isVisible = true
                 holder.binding.phrases1.text = phrasesList[0].text
                 holder.binding.phrases2.isVisible = true

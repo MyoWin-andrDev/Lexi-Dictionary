@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <!--        Noun-->
@@ -33,49 +32,56 @@
 
     </LinearLayout>
     <!--        Sense Def-->
-<!--    <TextView-->
-<!--        android:id="@+id/senDefinition"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="the act or process of organization"-->
-<!--        android:textColor="@color/blackText"-->
-<!--        android:fontFamily="@font/opensans_medium"-->
-<!--        android:textSize="16sp"-->
-<!--        android:layout_marginStart="@dimen/three_x"-->
-<!--        android:layout_marginTop="@dimen/one_x"/>-->
-
-    <TextView
-        android:id="@+id/senShortDefinition"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="the act or process of organization"
-        android:textColor="@color/blackText"
-        android:fontFamily="@font/opensans_medium"
-        android:textSize="16sp"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginTop="@dimen/one_x"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/subSenDefinition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="the act or process of organization"
-        android:textColor="@color/blackText"
-        android:fontFamily="@font/opensans_medium"
-        android:textSize="16sp"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginTop="@dimen/two_x"/>
+        <TextView
+            android:id="@+id/senDefinition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="the act or process of organization"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
 
-    <TextView
-        android:id="@+id/subSenShortDefinition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="the act or process of organization"
-        android:textColor="@color/blackText"
-        android:fontFamily="@font/opensans_medium"
-        android:textSize="16sp"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginTop="@dimen/two_x"/>
+        <TextView
+            android:id="@+id/senShortDefinition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="the act or process of organization"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
+
+        <TextView
+            android:id="@+id/subSenDefinition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="the act or process of organization"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/two_x"/>
+
+        <TextView
+            android:id="@+id/subSenShortDefinition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="the act or process of organization"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/two_x"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/phrasesTitle"

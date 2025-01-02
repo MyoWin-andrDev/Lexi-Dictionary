@@ -54,23 +54,25 @@ class DefinitionActivity : AppCompatActivity() {
 
                         //WordText
                         val wordText = result[0].word
-                        if(wordText.isNotEmpty()){
+                        if(!wordText.isNullOrEmpty()){
                                 binding.wordText.text = wordText
-                            }
-                        //Phonetic
-                        val phonetic = result[0].lexicalEntries[0].entries[0].pronunciations[0].phoneticSpelling
-                        if(phonetic.isNotEmpty()){
-                            binding.phonetic.text = "/$phonetic/"
                         }
                         //Definition
                         val definition = result[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
-                        if(definition.isNotEmpty()){
+                        if(!definition.isNullOrEmpty()){
                             binding.definitionText.text = result[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
                         }
+                        //Phonetic
+//                        val phonetic = result[0].lexicalEntries[0].entries[0].pronunciations[0].phoneticSpelling
+//                        val pronunciation = result[0].lexicalEntries[0].entries[0].pronunciations
+//                        if(!pronunciation.isNullOrEmpty()){
+//                            binding.phonetic.text = "/$phonetic/"
+//                        }
+
                         val phrases = result[0].lexicalEntries[0].phrases
                         binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, result, wordId)
 
-                        Log.d("definition", definition)
+                      //  Log.d("definition", definition)
                         phrases.forEach { index ->
                             Log.d("$index", index.toString())
                         }

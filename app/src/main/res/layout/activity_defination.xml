@@ -105,8 +105,7 @@
         app:layout_constraintStart_toStartOf="@id/definitionBox"
         app:layout_constraintEnd_toEndOf="@id/definitionBox"
         app:layout_constraintTop_toBottomOf="@id/definitionBox"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginEnd="@dimen/three_x"/>
+        android:layout_marginStart="@dimen/three_x"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
