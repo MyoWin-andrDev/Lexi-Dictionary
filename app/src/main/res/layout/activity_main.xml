@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/topNavBackground"
         android:layout_width="match_parent"
         android:layout_height="@dimen/fifteen_x"
         android:src="@drawable/main_header"
@@ -16,46 +17,144 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/lexiLogo"
+        android:layout_width="@dimen/ten_x"
+        android:layout_height="@dimen/ten_x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/lexi_cropped_logo"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginTop="@dimen/three_x"/>
+<!--    Clickable Icon-->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lexiLogo"
+        android:layout_marginTop="@dimen/three_x"
+        android:orientation="horizontal">
+        <!--        notification -->
+        <ImageButton
+            android:layout_width="@dimen/three_x"
+            android:layout_height="@dimen/three_x"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/one_x"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/notification_icon" />
+        <!--        profile -->
+        <ImageButton
+            android:layout_width="@dimen/three_x"
+            android:layout_height="@dimen/three_x"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
+            android:background="@android:color/transparent"
+            android:src="@drawable/profile_icon" />
+        <!--        Menu-->
+        <ImageButton
+            android:layout_width="@dimen/three_x"
+            android:layout_height="@dimen/three_x"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/one_x"
+            android:background="@android:color/transparent"
+            android:src="@drawable/category_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/seven_x"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lexiLogo"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/two_x"
+        android:layout_marginTop="@dimen/one_x"
+        android:gravity="center">
+
+        <!--        Search-->
+        <ImageButton
+            android:id="@+id/seachBtn"
+            android:focusableInTouchMode="true"
+            android:layout_width="@dimen/three_x"
+            android:layout_height="@dimen/three_x"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/one_x"
+            android:background="@android:color/transparent"
+            android:src="@drawable/search_icon"
+            android:layout_marginEnd="@dimen/one_x"/>
+<!--        Width 27x-->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/searchBar"
+            android:layout_width="224dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_background"
+            android:drawablePadding="@dimen/two_x"
+            android:paddingStart="@dimen/one_x"
+            android:hint="Search Lexicon"/>
+
+        <!--        Audio-->
+        <ImageButton
+            android:id="@+id/microphone_btn"
+            android:layout_width="@dimen/three_x"
+            android:layout_height="@dimen/three_x"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/one_x"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/microphone_icon" />
+        <!--        Camera-->
+        <ImageButton
+            android:id="@+id/cameraBtn"
+            android:layout_width="@dimen/three_x"
+            android:layout_height="@dimen/three_x"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
+            android:background="@android:color/transparent"
+            android:src="@drawable/camera_icon" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginEnd="@dimen/three_x"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="lexi"
-            android:textColor="@color/blue"
-            android:fontFamily="@font/opensans_regular"
-            android:textAlignment="center"
-            android:textSize="32sp"
-            android:layout_marginTop="@dimen/two_x"/>
+        app:layout_constraintTop_toBottomOf="@id/topNavBar"/>
 
 <!--        <androidx.appcompat.widget.AppCompatEditText-->
 <!--            android:id="@+id/search_bar"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="@dimen/six_x"-->
 <!--            android:layout_marginTop="@dimen/two_x"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lexiLogo"-->
+<!--            android:hint="Search Lexicon"-->
 <!--            android:background="@drawable/search_background"-->
-<!--            android:drawableStart="@drawable/search_focus_icon"-->
+<!--            android:drawableStart="@drawable/search_icon"-->
 <!--            android:drawableEnd="@drawable/clear_icon"-->
 <!--            android:paddingStart="@dimen/two_x"-->
 <!--            android:drawablePadding="@dimen/two_x"-->
 <!--            android:paddingEnd="@dimen/two_x"/>-->
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/recyclerView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/suggestion_background"/>-->
-
-    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"
+            android:background="@drawable/suggestion_background"/>
 
 
 

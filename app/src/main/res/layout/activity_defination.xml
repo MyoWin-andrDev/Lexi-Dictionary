@@ -34,24 +34,24 @@
             android:orientation="horizontal">
             <!--        Audio-->
             <ImageButton
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/four_x"
+                android:layout_height="@dimen/four_x"
                 android:src="@drawable/audio_icon_click"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
                 android:layout_margin="@dimen/two_x"/>
             <!--        Heart-->
             <ImageButton
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/four_x"
+                android:layout_height="@dimen/four_x"
                 android:src="@drawable/heart_icon_click"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/two_x"
                 android:background="@android:color/transparent"/>
             <!--        Copy-->
             <ImageButton
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/four_x"
+                android:layout_height="@dimen/four_x"
                 android:src="@drawable/copy_icon"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/two_x"

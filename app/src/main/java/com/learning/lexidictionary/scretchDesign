@@ -1,0 +1,12 @@
+//Former Search Bar Design
+<androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/six_x"
+            android:layout_marginTop="@dimen/two_x"
+            android:background="@drawable/search_background"
+            android:drawableStart="@drawable/search_focus_icon"
+            android:drawableEnd="@drawable/clear_icon"
+            android:paddingStart="@dimen/two_x"
+            android:drawablePadding="@dimen/two_x"
+            android:paddingEnd="@dimen/two_x"/>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!--    Density-independent pixels-->
     <dimen name="one_x">8dp</dimen>
     <dimen name="two_x">16dp</dimen>
     <dimen name="three_x">24dp</dimen>
@@ -20,4 +21,6 @@
     <dimen name="eighteen_x">144dp</dimen>
     <dimen name="nineteen_x">152dp</dimen>
     <dimen name="twenty_x">160dp</dimen>
+<!--    Icon Size-->
+    <dimen name="twenty_dp_icon">20dp</dimen>
 </resources>

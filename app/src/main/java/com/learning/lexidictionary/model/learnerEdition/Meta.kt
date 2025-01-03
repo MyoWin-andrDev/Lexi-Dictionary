@@ -1,6 +1,9 @@
 package com.learning.lexidictionary.model.learnerEdition
 
+import com.google.gson.annotations.SerializedName
+
 data class Meta(
+    @SerializedName("app-shortdef")
     val appShortDef: AppShortdef,
     val highlight: String,
     val id: String,

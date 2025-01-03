@@ -53,17 +53,17 @@ class MainActivity : AppCompatActivity() {
 
         })
         // Clear_Icon
-        searchBar.setOnTouchListener { _, motionEvent ->
-            if(motionEvent.action == MotionEvent.ACTION_DOWN) {
-                if (motionEvent.rawX >= (searchBar.right -
-                            searchBar.compoundDrawables[2].bounds.width())
-                ) {
-                    searchBar.text!!.clear()
-                    return@setOnTouchListener true
-                }
-            }
-            false
-        }
+//        searchBar.setOnTouchListener { _, motionEvent ->
+//            if(motionEvent.action == MotionEvent.ACTION_DOWN) {
+//                if (motionEvent.rawX >= (searchBar.right -
+//                            searchBar.compoundDrawables[2].bounds.width())
+//                ) {
+//                    searchBar.text!!.clear()
+//                    return@setOnTouchListener true
+//                }
+//            }
+//            false
+//        }
     }
     private fun initLayoutManager() {
        // TODO("Not yet implemented")

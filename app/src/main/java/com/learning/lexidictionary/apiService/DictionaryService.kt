@@ -1,36 +1,25 @@
 package com.learning.lexidictionary.apiService
 
-import com.learning.lexidictionary.model.entry.EntriesData
-import com.learning.lexidictionary.model.word.WordData
-import com.learning.lexidictionary.model.search.SearchData
+import com.learning.lexidictionary.model.learnerEdition.LearnerData
+import com.learning.lexidictionary.model.studentEdition.StudentData
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+
 interface DictionaryService{
-    @GET("search/en-gb")
-    fun search(
-        @Query("q") entry : String,
-        @Header("Accept") accept : String = "application/json",
-        @Header("app_id") id : String = "819d7d21",
-        @Header("app_key") key : String = "4e4d038084d005f2ea4ef0f617e921d0"
-    ) : Call<SearchData>
+    //LearnerEditon
+    @GET("learners/json/{query}")
+    fun getLearnerResult (
+        @Path("query") query: String,
+        @Query("key") key : String = "636fd0e7-95e2-476a-8495-eee2f107cf16"
+    ) : Call<LearnerData>
 
-    @GET("words/en-gb")
-    fun word(
-        @Query("q") search : String,
-        @Header("Accept") accept : String = "application/json",
-        @Header("app_id") id : String = "819d7d21",
-        @Header("app_key") key : String = "4e4d038084d005f2ea4ef0f617e921d0"
-    ) : Call<WordData>
-
-    @GET("entries/en-gb/{word}")
-    fun entries (
-        @Path("word") word : String,
-        @Header("Accept") accept : String = "application/json",
-        @Header("app_id") id : String = "819d7d21",
-        @Header("app_key") key : String = "4e4d038084d005f2ea4ef0f617e921d0",
-    ) : Call<EntriesData>
+    //StudentEdition
+    @GET("/sd4/json/{query}")
+    fun getStudentResult (
+        @Path("query") query : String,
+        @Query("key") key : String = "d6b440b8-391a-44b8-8889-c080bc87d68a"
+    ) : Call<StudentData>
 }
