@@ -71,62 +71,74 @@
             app:layout_constraintTop_toBottomOf="@id/wordText"
             android:layout_marginTop="@dimen/one_x"/>
 
-<!--    Defination-->
-    <LinearLayout
-        android:id="@+id/definitionBox"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/definitionHeader"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/phonetic"
         app:layout_constraintTop_toBottomOf="@id/phonetic"
-        android:layout_marginTop="@dimen/two_x"
-        android:layout_marginStart="@dimen/three_x"
-        android:layout_marginEnd="@dimen/three_x"
-        android:padding="@dimen/two_x"
-        android:orientation="vertical"
-        android:background="@drawable/definition_background">
+        android:text="Definition"
+        android:textSize="16sp"
+        android:fontFamily="@font/raleway_medium"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/definitionText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/opensans_medium" />
+<!--    Defination-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/definitionBox"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/phonetic"-->
+<!--        android:layout_marginTop="@dimen/two_x"-->
+<!--        android:layout_marginStart="@dimen/three_x"-->
+<!--        android:layout_marginEnd="@dimen/three_x"-->
+<!--        android:padding="@dimen/two_x"-->
+<!--        android:orientation="vertical"-->
+<!--        android:background="@drawable/definition_background"-->
+<!--        android:visibility="gone">-->
 
-        <TextView
-            android:id="@+id/definitionText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/opensans_medium"
-            android:layout_marginTop="@dimen/one_x"
-            android:visibility="gone"/>
+<!--        <TextView-->
+<!--            android:id="@+id/definitionText1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/lorem_ipsum"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="@font/opensans_medium" />-->
 
-        <TextView
-            android:id="@+id/definitionText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/opensans_medium"
-            android:layout_marginTop="@dimen/one_x"
-            android:visibility="gone"/>
+<!--        <TextView-->
+<!--            android:id="@+id/definitionText2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/lorem_ipsum"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="@font/opensans_medium"-->
+<!--            android:layout_marginTop="@dimen/one_x"-->
+<!--            android:visibility="gone"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/definitionText3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/lorem_ipsum"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="@font/opensans_medium"-->
+<!--            android:layout_marginTop="@dimen/one_x"-->
+<!--            android:visibility="gone"/>-->
 
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/definitionRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/definitionBox"
-        app:layout_constraintEnd_toEndOf="@id/definitionBox"
-        app:layout_constraintTop_toBottomOf="@id/definitionBox"
+        app:layout_constraintStart_toStartOf="@id/definitionHeader"
+        app:layout_constraintEnd_toEndOf="@id/definitionHeader"
+        app:layout_constraintTop_toBottomOf="@id/definitionHeader"
         android:layout_marginStart="@dimen/three_x"/>
 
 

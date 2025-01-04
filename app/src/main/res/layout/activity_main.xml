@@ -94,8 +94,10 @@
             android:layout_width="224dp"
             android:layout_height="match_parent"
             android:background="@drawable/search_background"
+            android:drawableEnd="@drawable/clear_icon"
             android:drawablePadding="@dimen/two_x"
             android:paddingStart="@dimen/one_x"
+            android:paddingEnd="@dimen/one_x"
             android:hint="Search Lexicon"/>
 
         <!--        Audio-->

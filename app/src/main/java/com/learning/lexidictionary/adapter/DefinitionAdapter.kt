@@ -1,41 +1,41 @@
-//package com.learning.lexidictionary.adapter
-//
-//import android.content.Context
-//import android.util.Log
-//import android.view.LayoutInflater
-//import android.view.ViewGroup
-//import androidx.core.view.isVisible
-//import androidx.recyclerview.widget.RecyclerView
-//import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
-//
-//class DefinitionAdapter(val context : Context, val resultList : List<Result>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
-//    val lexicalEntry = resultList[0].lexicalEntries
-//    class PhrasesViewHolder ( val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
-//
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhrasesViewHolder {
-//       // TODO("Not yet implemented")
-//        val layoutInflater = LayoutInflater.from(parent.context)
-//        val binding = DefinitonLayoutBinding.inflate(layoutInflater)
-//        return PhrasesViewHolder(binding)
-//    }
-//
-//    override fun getItemCount(): Int {
-//      //  TODO("Not yet implemented")
-//        return lexicalEntry.size
-//    }
-//
-//    override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
-//      //  TODO("Not yet implemented")
-//        val index = lexicalEntry[position]
-//        val getSenses = index.entries[position].senses[position]
-//       // holder.binding.senDefinition.text = getSenses.definitions[0]
-//        holder.binding.senShortDefinition.text = getSenses.shortDefinitions[0]
-//        holder.binding.subSenDefinition.text = getSenses.subsenses[position].definitions[0]
-//        holder.binding.subSenShortDefinition.text = getSenses.subsenses[position].shortDefinitions[0]
-//
-//        //Retrieving Phrases
+package com.learning.lexidictionary.adapter
+
+import android.content.Context
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.RecyclerView
+import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
+import com.learning.lexidictionary.model.learnerEdition.LearnerData
+
+class DefinitionAdapter(val context : Context, val learnerDataList : List<LearnerData>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
+
+
+    class PhrasesViewHolder ( val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
+
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhrasesViewHolder {
+       // TODO("Not yet implemented")
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding = DefinitonLayoutBinding.inflate(layoutInflater)
+        return PhrasesViewHolder(binding)
+    }
+
+    override fun getItemCount(): Int {
+      //  TODO("Not yet implemented")
+        return learnerDataList.size
+    }
+
+    override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
+      //  TODO("Not yet implemented")
+        val learnerData = learnerDataList[position]
+        val definition = learnerData[position].def[0].sseq.indices
+        Log.d("defSize", definition.toString())
+        //Retrieving Definition
+
+        //Retrieving Examples
 //        val phrasesList = index.phrases
 //        Log.d("phrasesList", phrasesList.toString())
 //        val phrasesSize = phrasesList.size
@@ -43,7 +43,7 @@
 //
 //        when(phrasesSize){
 //            1 -> {
-//                holder.binding.phrases1.isVisible = true
+//                holder.binding.senDefinition.isVisible = true
 //                holder.binding.phrases1.text = phrasesList[0].text
 //            }
 //            2 -> {
@@ -72,7 +72,7 @@
 //            }
 //
 //        }
-//    }
-//
-//
-//}
+    }
+
+
+}

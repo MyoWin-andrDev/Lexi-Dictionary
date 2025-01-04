@@ -1,18 +1,21 @@
 package com.learning.lexidictionary
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
+import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var word : String
     private val url : String = "https://dictionaryapi.com/api/v3/references/"
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         initListener();
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ClickableViewAccessibility")
     private fun initListener(){
         val searchBar = binding.searchBar
@@ -53,17 +58,17 @@ class MainActivity : AppCompatActivity() {
 
         })
         // Clear_Icon
-//        searchBar.setOnTouchListener { _, motionEvent ->
-//            if(motionEvent.action == MotionEvent.ACTION_DOWN) {
-//                if (motionEvent.rawX >= (searchBar.right -
-//                            searchBar.compoundDrawables[2].bounds.width())
-//                ) {
-//                    searchBar.text!!.clear()
-//                    return@setOnTouchListener true
-//                }
-//            }
-//            false
-//        }
+        searchBar.setOnTouchListener { _, motionEvent ->
+            if(motionEvent.action == MotionEvent.ACTION_DOWN) {
+                if (motionEvent.rawX >= (searchBar.right -
+                            searchBar.compoundDrawables[2].bounds.width())
+                ) {
+                    searchBar.text!!.clear()
+                    return@setOnTouchListener true
+                }
+            }
+            false
+        }
     }
     private fun initLayoutManager() {
        // TODO("Not yet implemented")
@@ -80,13 +85,18 @@ class MainActivity : AppCompatActivity() {
         val apiService = retrofit.create(DictionaryService::class.java)
         val call = apiService.getLearnerResult(word)
         call.enqueue(object : Callback<LearnerData> {
+            @RequiresApi(35)
             override fun onResponse(call: Call<LearnerData>, response: Response<LearnerData>) {
               //  TODO("Not yet implemented")
                 if(response.isSuccessful){
+                    val learnerData = listOf(response.body()!!)
+                    Log.d("learnerData", learnerData.toString())
                     val resultList  = response.body()!![0]
+                    Log.d("resultList", resultList.toString())
                     //Related Word List
                     val stemList = resultList.meta.stems
                     Log.d("stemList", stemList.toString())
+                    val getItemSize = getItemSize(word, learnerData)
                     binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, stemList, word)
                 }
             }
@@ -96,6 +106,25 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    @RequiresApi(35)
+    private fun getItemSize(wordId: String, resultList : List<LearnerData>) : Int {
+        val largestNumber : Int = 0
+        val dice = resultList.indices
+        Log.d("dice", dice.toString())
+        for(i in resultList.indices) {
+            for (j in resultList.indices) {
+                if (resultList[i][j].meta.id.contains(wordId)) {
+                    if (resultList[i][j].meta.id.contains(":")) {
+                        val count = resultList[i][j].meta.id.substringAfter(":").toInt()
+                        Log.d("count", count.toString())
+                    }
+                }
+            }
+        }
+        // Log.d("largest", largestNumber.toString())
+        return largestNumber
     }
 
 }
