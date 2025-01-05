@@ -30,11 +30,16 @@ class DefinitionAdapter(val context : Context, val learnerDataList : List<Learne
 
     override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
       //  TODO("Not yet implemented")
+        val binding = holder.binding
         val learnerData = learnerDataList[position]
-        val definition = learnerData[position].def[0].sseq.indices
-        Log.d("defSize", definition.toString())
+       // val definition = learnerData[position].def[0].sseq
+      //  val def = definition[0][0].second.dt
+        //Log.d("defSize", definition.toString())
+      //  Log.d("def", def.toString())
         //Retrieving Definition
-
+//        when(definition){
+//            1 -> binding.senDefinition.text = definition[0][0][0].toString()
+//        }
         //Retrieving Examples
 //        val phrasesList = index.phrases
 //        Log.d("phrasesList", phrasesList.toString())

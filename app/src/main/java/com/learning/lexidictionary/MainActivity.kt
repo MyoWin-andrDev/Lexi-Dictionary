@@ -5,22 +5,28 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.JsonReader
 import android.util.Log
 import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
+import com.learning.lexidictionary.model.learnerEdition.Details
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
-import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
+import com.learning.lexidictionary.model.learnerEdition.Null
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.InputStreamReader
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -97,6 +103,10 @@ class MainActivity : AppCompatActivity() {
                     val stemList = resultList.meta.stems
                     Log.d("stemList", stemList.toString())
                     val getItemSize = getItemSize(word, learnerData)
+                    val sseqList = resultList.def[0].sseq[0][0]
+                    //val details = Gson().fromJson(Gson().toJson(sseqList), Null::class.java)
+                    Log.d("sseqList", sseqList.toString())
+                  //  Log.d("detail", details.toString())
                     binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, stemList, word)
                 }
             }
