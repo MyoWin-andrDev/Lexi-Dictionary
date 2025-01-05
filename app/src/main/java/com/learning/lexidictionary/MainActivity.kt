@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
@@ -24,7 +25,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.InputStreamReader
 
 
 
@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
         initLayoutManager()
         initListener();
     }
@@ -103,10 +106,6 @@ class MainActivity : AppCompatActivity() {
                     val stemList = resultList.meta.stems
                     Log.d("stemList", stemList.toString())
                     val getItemSize = getItemSize(word, learnerData)
-                    val sseqList = resultList.def[0].sseq[0][0]
-                    //val details = Gson().fromJson(Gson().toJson(sseqList), Null::class.java)
-                    Log.d("sseqList", sseqList.toString())
-                  //  Log.d("detail", details.toString())
                     binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, stemList, word)
                 }
             }
