@@ -1,17 +1,21 @@
 package com.learning.lexidictionary.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.Eg
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 
 class DefinitionAdapter(val context : Context, val learnerDataItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
-    val definitionList = Definition().getDefinition(learnerDataItemList)
+    val defClass = Definition()
+    val definitionList = defClass.getDefinition(learnerDataItemList)
 
     class PhrasesViewHolder ( val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
 
@@ -29,28 +33,32 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
         return 1
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
       //  TODO("Not yet implemented")
         val binding = holder.binding
         val definitionData = learnerDataItemList[position]
         //Retrieving Data at Index 0
-        val defList = Definition().getDefinitionAtIndex(learnerDataItemList, 0)
+        val defList = defClass.getDefinitionAtIndex(learnerDataItemList, 0)
         //Definition
         val definition = defList[0] as List<*>
         if(definition != null){
-            binding.senDefinition.text = Definition().replaceBCString(definition[1].toString())
+            binding.senDefinition.text = defClass.replaceBCString(definition[1].toString())
         }
         val example = defList[1] as List<*>
         if(example != null){
             if(example[0]!! == "vis"){
-                val egList = example[1] as List<*>
-                val t = egList[0] as List<*>
-                Log.d("Eg", t.toString())
-
-                //binding.senDefEg1.text = t.toString()
-//                for(i in t.toString()){
-//                   binding.senDefEg1.text = egList[i].toString()
-//                }
+                val vis = example[1] as List<*>
+                val exampleList = Gson().fromJson(Gson().toJson(vis), Array<Eg>::class.java).toList()
+                Log.d("vis", vis.size.toString())
+                Log.d("egList", exampleList.size.toString())
+                when(exampleList.size){
+                    1 -> binding.senDefEg1.text = defClass.replaceFirstAfterQuote(exampleList[0].t)
+                    2 -> binding.senDefEg1.text = defClass.replaceFirstAfterQuote(exampleList[0].t) +"\n" + defClass.replaceFirstAfterQuote(exampleList[1].t)
+                    3 -> binding.senDefEg1.text = defClass.replaceFirstAfterQuote(exampleList[0].t) +"\n" + defClass.replaceFirstAfterQuote(exampleList[1].t) +"\n" + defClass.replaceFirstAfterQuote(exampleList[2].t)
+                    in 4..10 -> binding.senDefEg1.text = defClass.replaceFirstAfterQuote(exampleList[0].t) +"\n" + defClass.replaceFirstAfterQuote(exampleList[1].t) +"\n" + defClass.replaceFirstAfterQuote(exampleList[2].t) +"\n" + defClass.replaceFirstAfterQuote(exampleList[3].t)
+                    else -> binding.senDefEg1.isVisible = false
+                }
             }
         }
 
