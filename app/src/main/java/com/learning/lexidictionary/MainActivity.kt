@@ -5,21 +5,17 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.JsonReader
 import android.util.Log
 import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.learning.lexidictionary.adapter.SuggestionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityMainBinding
-import com.learning.lexidictionary.model.learnerEdition.Details
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
-import com.learning.lexidictionary.model.learnerEdition.Null
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -99,13 +95,9 @@ class MainActivity : AppCompatActivity() {
               //  TODO("Not yet implemented")
                 if(response.isSuccessful){
                     val learnerData = listOf(response.body()!!)
-                    Log.d("learnerData", learnerData.toString())
                     val resultList  = response.body()!![0]
-                    Log.d("resultList", resultList.toString())
                     //Related Word List
                     val stemList = resultList.meta.stems
-                    Log.d("stemList", stemList.toString())
-                    val getItemSize = getItemSize(word, learnerData)
                     binding.recyclerView.adapter = SuggestionAdapter(this@MainActivity, stemList, word)
                 }
             }

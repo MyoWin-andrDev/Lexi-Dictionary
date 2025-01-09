@@ -4,13 +4,14 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
-import com.learning.lexidictionary.model.learnerEdition.LearnerData
+import com.learning.lexidictionary.model.learnerEdition.Eg
+import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 
-class DefinitionAdapter(val context : Context, val learnerDataList : List<LearnerData>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
-
+class DefinitionAdapter(val context : Context, val learnerDataItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
+    val definitionList = Definition().getDefinition(learnerDataItemList)
 
     class PhrasesViewHolder ( val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
 
@@ -25,17 +26,44 @@ class DefinitionAdapter(val context : Context, val learnerDataList : List<Learne
 
     override fun getItemCount(): Int {
       //  TODO("Not yet implemented")
-        return learnerDataList.size
+        return 1
     }
 
     override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
       //  TODO("Not yet implemented")
         val binding = holder.binding
-        val learnerData = learnerDataList[position]
-       // val definition = learnerData[position].def[0].sseq
-      //  val def = definition[0][0].second.dt
-        //Log.d("defSize", definition.toString())
-      //  Log.d("def", def.toString())
+        val definitionData = learnerDataItemList[position]
+        //Retrieving Data at Index 0
+        val defList = Definition().getDefinitionAtIndex(learnerDataItemList, 0)
+        //Definition
+        val definition = defList[0] as List<*>
+        if(definition != null){
+            binding.senDefinition.text = Definition().replaceBCString(definition[1].toString())
+        }
+        val example = defList[1] as List<*>
+        if(example != null){
+            if(example[0]!! == "vis"){
+                val egList = example[1] as List<*>
+                val t = egList[0] as List<*>
+                Log.d("Eg", t.toString())
+
+                //binding.senDefEg1.text = t.toString()
+//                for(i in t.toString()){
+//                   binding.senDefEg1.text = egList[i].toString()
+//                }
+            }
+        }
+
+
+
+
+
+        //Retrieving Definition at Index 1
+        val defList1 = Definition().getDefinitionAtIndex(learnerDataItemList, 1)
+        val definition1 = defList1[0] as List<*>
+        if(definition1 != null){
+            binding.senShortDefinition.text = Definition().replaceBCString(definition1[1].toString())
+        }
         //Retrieving Definition
 //        when(definition){
 //            1 -> binding.senDefinition.text = definition[0][0][0].toString()

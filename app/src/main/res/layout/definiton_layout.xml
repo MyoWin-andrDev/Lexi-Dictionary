@@ -22,7 +22,7 @@
             android:fontFamily="@font/nunito_sans_regular"
             android:textStyle="bold"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/blackText"
             android:background="@drawable/circleview"/>
 
         <TextView

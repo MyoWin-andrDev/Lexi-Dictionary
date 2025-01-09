@@ -6,10 +6,10 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learning.lexidictionary.adapter.DefinitionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
+import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
 import retrofit2.Call
@@ -50,22 +50,18 @@ class DefinitionActivity : AppCompatActivity() {
                 //TODO("Not yet implemented")
                 if(response.isSuccessful) {
                     val learnerData = listOf(response.body()!!)
-                   // Log.d("learnerData", learnerData.toString())
-                    val result = response.body()!![0]
-                   // Log.d("result", result.toString())
+                    val learnerDataItem = response.body()!![0]
                     val learnerList = listOf(response.body()!![0])
-                   // Log.d("learnerList", learnerList.toString())
                     //WordText
-                    binding.wordText.text = result.meta.id
+                    binding.wordText.text = learnerDataItem.meta.id
                     //Phonetic
-                    val pronunciation = result.hwi.prs
-                    val phonetic = pronunciation!![0].ipa
+                    val pronunciation = learnerDataItem.hwi.prs
+                    val phonetic = pronunciation[0].ipa
                     binding.phonetic.text = "/$phonetic/"
                     //Definition
-                    val definition = result.meta.appShortDef.def
-                    val replacedDefList = replaceBC(definition!!)
-                    Log.d("list", replacedDefList.toString())
-                    binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, learnerData, wordId)
+                    //val definition = Definition().getDefinition(learnerDataItem)
+                    //val replacedDefList = replaceBC(definition!!)
+                    binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, learnerList, wordId)
                    // val largest = getItemSize(wordId, listOf(result))
 //                        when (definition.size) {
 //                            1 -> binding.definitionText1.text = replacedDefList[0]
@@ -91,19 +87,6 @@ class DefinitionActivity : AppCompatActivity() {
             }
 
         })
-    }
-
-    private fun replaceBC( list : List<String>) : List<String> {
-         val replacedList = list.map { list ->
-            val occurrence = list.split("{bc}").size - 1
-             when (occurrence) {
-                 0 -> list
-                 1 -> list.replace("{bc}", "\u2022 ")
-                 else -> list.replaceFirst("{bc}","\u2022").replaceFirst("{bc}","\n\u2022")
-             }
-        }
-        Log.d("replace", replacedList.toString())
-        return replacedList
     }
 
 }
