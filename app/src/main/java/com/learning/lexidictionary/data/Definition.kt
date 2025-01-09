@@ -1,6 +1,8 @@
 package com.learning.lexidictionary.data
 
 import android.util.Log
+import com.google.gson.Gson
+import com.learning.lexidictionary.model.learnerEdition.Eg
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 
 class Definition {
@@ -47,13 +49,13 @@ class Definition {
        return when (occurrence) {
             0 -> string
             1 -> string.replace("{bc}", "\u2022 ")
-            else -> string.replaceFirst("{bc}","\u2022").replaceFirst("{bc}","\n\u2022")
+            else -> string.replaceFirst("{bc}","\u2022").replaceFirst("{bc}","\n\u003a")
         }
     }
 
-    fun replaceFirstAfterQuote(string : String) : String{
-        val replacedString = string.replaceFirst("\n" +
-                "\"t\": \"","")
-        return replacedString.substringBefore('"')
+    fun linkedTreeMapToList( list : List<*>) : List<Eg>{
+        val gson = Gson()
+        val formattedList = gson.fromJson(gson.toJson(list), Array<Eg>::class.java).toList()
+        return formattedList
     }
 }
