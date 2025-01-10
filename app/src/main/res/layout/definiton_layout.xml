@@ -394,17 +394,33 @@
 
     </LinearLayout>
 <!--    See More-->
-    <TextView
-        android:id="@+id/seeMoreMenu"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/seeMoreLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/definitionLayout"
-        android:text="See More "
-        android:textSize="16sp"
-        android:fontFamily="@font/raleway_medium"
-        android:textStyle="bold"
-        android:layout_margin="@dimen/one_x"/>
+        android:layout_margin="@dimen/one_x"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/seeMoreMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See More "
+            android:textSize="16sp"
+            android:fontFamily="@font/raleway_medium"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bottom_icon"
+            android:layout_marginTop="2dp"/>
+
+
+    </LinearLayout>
+
 <!--    End Line-->
     <TextView
         android:layout_width="match_parent"
