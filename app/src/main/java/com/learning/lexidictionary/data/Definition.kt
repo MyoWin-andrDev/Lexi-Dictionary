@@ -18,15 +18,19 @@ class Definition {
         return  dt
     }
 
-    fun getDefinitionAtIndex(learnerDataItem: List<LearnerDataItem>, index : Int) : List<*>{
+    fun getDefinitionAtIndex(learnerDataItem: List<LearnerDataItem>, index : Int) : List<*>? {
         val sseqList = learnerDataItem[0].def[0].sseq[index][0] as List<*>
         //Retrieve the sense and the detail
         val sense = sseqList[0] as String
+        var dt : List<*>? = null
+        if(sense == "sense"){
         val detail = sseqList[1] as Map<*, *>
         //Extract dt as List
-        val dt = detail["dt"] as List<*>
+        dt = detail["dt"] as List<*>
         Log.d("dt", dt.toString())
+        }
         return  dt
+
     }
 //    fun getExampleAtIndex(learnerDataItem: List<LearnerDataItem>, index : Int) : List<*>{
 //        val sseqList = learnerDataItem[0].def[0].sseq[index][0] as List<*>
