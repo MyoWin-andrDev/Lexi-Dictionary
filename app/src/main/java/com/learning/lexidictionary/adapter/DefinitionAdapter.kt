@@ -41,34 +41,34 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
         val binding = holder.binding
         val definitionData = learnerDataItemList[position]
 
-        //Retrieving Data at Index 0
-        val defList = defClass.getDefinitionAtIndex(learnerDataItemList, 0)
-        //Definition
-        val definition = defList?.get(0) as List<*>
-        if (definition != null && definition.isNotEmpty()) {
-            binding.senDefinition.text = defClass.replaceBCString(definition[1].toString())
-        }
-        //Example
-        val example = defList[1] as List<*>
-        if (example != null) {
-            if (example[0]!! == "vis") {
-                val vis = example[1] as List<*>
-                val exampleList = defClass.linkedTreeMapToList(vis)
-                Log.d("vis", vis.size.toString())
-                Log.d("egList", exampleList.size.toString())
-                when (exampleList.size) {
-                    1 -> binding.senDefEg1.text = exampleList[0].t
-                    2 -> binding.senDefEg1.text = exampleList[0].t + "\n" + exampleList[1].t
-                    3 -> binding.senDefEg1.text =
-                        exampleList[0].t + "\n" + exampleList[1].t + "\n" + exampleList[2].t
-
-                    in 4..10 -> binding.senDefEg1.text =
-                        exampleList[0].t + "\n" + exampleList[1].t + "\n" + exampleList[2].t + "\n" + exampleList[3].t
-
-                    else -> binding.senDefEg1.isVisible = false
-                }
-            }
-        }
+//        //Retrieving Data at Index 0
+//        val defList = defClass.getDefinitionAtIndex(learnerDataItemList, 0)
+//        //Definition
+//        val definition = defList?.get(0) as List<*>
+//        if (definition != null && definition.isNotEmpty()) {
+//            binding.senDefinition.text = defClass.replaceBCString(definition[1].toString())
+//        }
+//        //Example
+//        val example = defList[1] as List<*>
+//        if (example != null) {
+//            if (example[0]!! == "vis") {
+//                val vis = example[1] as List<*>
+//                val exampleList = defClass.linkedTreeMapToList(vis)
+//                Log.d("vis", vis.size.toString())
+//                Log.d("egList", exampleList.size.toString())
+//                when (exampleList.size) {
+//                    1 -> binding.senDefEg1.text = exampleList[0].t
+//                    2 -> binding.senDefEg1.text = exampleList[0].t + "\n" + exampleList[1].t
+//                    3 -> binding.senDefEg1.text =
+//                        exampleList[0].t + "\n" + exampleList[1].t + "\n" + exampleList[2].t
+//
+//                    in 4..10 -> binding.senDefEg1.text =
+//                        exampleList[0].t + "\n" + exampleList[1].t + "\n" + exampleList[2].t + "\n" + exampleList[3].t
+//
+//                    else -> binding.senDefEg1.isVisible = false
+//                }
+//            }
+//        }
 
         //Retrieving Definition at Index 1
         //Definition1
@@ -79,24 +79,24 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
                 Definition().replaceBCString(definition1[1].toString())
         }
         //Example1
-        val example1 = defList1[1] as List<*>
-        if (example1 != null && example1.isNotEmpty()) {
-            if (example1[0]!! == "vis") {
-                val vis1 = example1[1] as List<*>
-                val example1List = defClass.linkedTreeMapToList(vis1)
-                when (example1List.size) {
-                    1 -> binding.senShortDefEg1.text = example1List[0].t
-                    2 -> binding.senShortDefEg1.text = example1List[0].t + "\n" + example1List[1].t
-                    3 -> binding.senShortDefEg1.text =
-                        example1List[0].t + "\n" + example1List[1].t + "\n" + example1List[2].t
-
-                    in 4..10 -> binding.senShortDefEg1.text =
-                        example1List[0].t + "\n" + example1List[1].t + "\n" + example1List[2].t + "\n" + example1List[3].t
-
-                    else -> binding.senShortDefEg1.isVisible = false
-                }
-            }
-        }
+//        val example1 = defList1[1] as List<*>
+//        if (example1 != null && example1.isNotEmpty()) {
+//            if (example1[0]!! == "vis") {
+//                val vis1 = example1[1] as List<*>
+//                val example1List = defClass.linkedTreeMapToList(vis1)
+//                when (example1List.size) {
+//                    1 -> binding.senShortDefEg1.text = example1List[0].t
+//                    2 -> binding.senShortDefEg1.text = example1List[0].t + "\n" + example1List[1].t
+//                    3 -> binding.senShortDefEg1.text =
+//                        example1List[0].t + "\n" + example1List[1].t + "\n" + example1List[2].t
+//
+//                    in 4..10 -> binding.senShortDefEg1.text =
+//                        example1List[0].t + "\n" + example1List[1].t + "\n" + example1List[2].t + "\n" + example1List[3].t
+//
+//                    else -> binding.senShortDefEg1.isVisible = false
+//                }
+//            }
+//        }
         //Retrieving Definition At Index 2
         val defList2 = defClass.getDefinitionAtIndex(learnerDataItemList, 2)
         val definition2 = defList2?.get(0) as List<*>
@@ -155,6 +155,6 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
             binding.subSenShortDefinition.isVisible = false
             binding.subSenShortDefEg1.isVisible = false
         }
-        DefinitionHandler().handleDefAndEg(learnerDataItemList, 0)
+        DefinitionHandler().handleDefAndEg(learnerDataItemList, 0, holder)
     }
 }

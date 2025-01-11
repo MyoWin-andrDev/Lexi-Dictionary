@@ -14,8 +14,12 @@ data class DefinitionDetail(
     val visList : Any,
     val uns : String
 )
-//Official DefList
-data class textList (
-    val
+
+data class uns(
+    val unsList : List<List<unsItem>>
 )
 
+data class unsItem(
+    val textList : List<String>,
+    val visList : List<Eg>
+)
