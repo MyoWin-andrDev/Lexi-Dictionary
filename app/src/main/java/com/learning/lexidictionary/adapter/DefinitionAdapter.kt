@@ -12,6 +12,7 @@ import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.Eg
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
+import com.learning.lexidictionary.ui_handler.DefinitionHandler
 
 class DefinitionAdapter(val context : Context, val learnerDataItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
     val defClass = Definition()
@@ -154,5 +155,6 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
             binding.subSenShortDefinition.isVisible = false
             binding.subSenShortDefEg1.isVisible = false
         }
+        DefinitionHandler().handleDefAndEg(learnerDataItemList, 0)
     }
 }

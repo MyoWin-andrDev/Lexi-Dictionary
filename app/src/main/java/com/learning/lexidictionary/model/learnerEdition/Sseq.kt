@@ -1,32 +1,21 @@
 package com.learning.lexidictionary.model.learnerEdition
 
-data class Definition(
-    val term: String,
-    val details: Details
+data class Eg(
+    val t : String
 )
-
-data class Null(
-    val sense : Any?,
-    val definition : List<Details>
+data class defDetail(
+    val sn : String,
+    val sgram : String,
+    val dt : List<*>
 )
-
-data class Details(
-    val sn: String,
-    val sgram: String,
-    val dt: List<DefinitionDetail>
-)
-
+//Unofficial DefList
 data class DefinitionDetail(
-    val text: String? = null,
-    val vis: List<Visual>? = null,
-    val uns: List<List<UncertaintyDetail>>? = null
+    val textList : List<Any>,
+    val visList : Any,
+    val uns : String
+)
+//Official DefList
+data class textList (
+    val
 )
 
-data class Visual(
-    val t: String
-)
-
-data class UncertaintyDetail(
-    val text: String? = null,
-    val vis: List<Visual>? = null
-)
