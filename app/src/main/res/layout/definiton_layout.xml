@@ -17,8 +17,9 @@
 
         <TextView
             android:layout_width="@dimen/three_x"
-            android:layout_height="@dimen/three_x"
+            android:layout_height="27sp"
             android:text="1"
+            android:textSize="12sp"
             android:fontFamily="@font/nunito_sans_regular"
             android:textStyle="bold"
             android:gravity="center"
@@ -428,7 +429,7 @@
         android:background="@color/grey_bright"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seeMoreMenu"
+        app:layout_constraintTop_toBottomOf="@id/seeMoreLayout"
         android:paddingStart="@dimen/two_x"
         android:paddingEnd="@dimen/two_x"/>
 

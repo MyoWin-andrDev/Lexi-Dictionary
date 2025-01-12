@@ -12,6 +12,7 @@ import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
+import com.learning.lexidictionary.ui_handler.DefinitionHandler
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -59,8 +60,7 @@ class DefinitionActivity : AppCompatActivity() {
                     val phonetic = pronunciation[0].ipa
                     binding.phonetic.text = "/$phonetic/"
                     //Definition
-                    //val definition = Definition().getDefinition(learnerDataItem)
-                    //val replacedDefList = replaceBC(definition!!)
+                    DefinitionHandler().getMainDef(learnerList, binding)
                     binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, learnerList, wordId)
                    // val largest = getItemSize(wordId, listOf(result))
 //                        when (definition.size) {

@@ -69,7 +69,7 @@
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="@id/wordText"
             app:layout_constraintTop_toBottomOf="@id/wordText"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginBottom="@dimen/one_x"/>
 
     <TextView
         android:id="@+id/definitionHeader"
@@ -83,62 +83,39 @@
         android:textStyle="bold"/>
 
 <!--    Defination-->
-<!--    <LinearLayout-->
-<!--        android:id="@+id/definitionBox"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/phonetic"-->
-<!--        android:layout_marginTop="@dimen/two_x"-->
-<!--        android:layout_marginStart="@dimen/three_x"-->
-<!--        android:layout_marginEnd="@dimen/three_x"-->
-<!--        android:padding="@dimen/two_x"-->
-<!--        android:orientation="vertical"-->
-<!--        android:background="@drawable/definition_background"-->
-<!--        android:visibility="gone">-->
+    <LinearLayout
+        android:id="@+id/definitionBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/definitionHeader"
+        android:layout_marginTop="@dimen/two_x"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginEnd="@dimen/three_x"
+        android:padding="@dimen/two_x"
+        android:orientation="vertical"
+        android:background="@drawable/definition_background">
 
-<!--        <TextView-->
-<!--            android:id="@+id/definitionText1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/lorem_ipsum"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:fontFamily="@font/opensans_medium" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/definitionText2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/lorem_ipsum"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:fontFamily="@font/opensans_medium"-->
-<!--            android:layout_marginTop="@dimen/one_x"-->
-<!--            android:visibility="gone"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/definitionText3"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/lorem_ipsum"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:fontFamily="@font/opensans_medium"-->
-<!--            android:layout_marginTop="@dimen/one_x"-->
-<!--            android:visibility="gone"/>-->
+        <TextView
+            android:id="@+id/definitionText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/opensans_medium" />
 
 
-<!--    </LinearLayout>-->
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/definitionRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/definitionHeader"
-        app:layout_constraintEnd_toEndOf="@id/definitionHeader"
-        app:layout_constraintTop_toBottomOf="@id/definitionHeader"
+        app:layout_constraintStart_toStartOf="@id/definitionBox"
+        app:layout_constraintEnd_toEndOf="@id/definitionBox"
+        app:layout_constraintTop_toBottomOf="@id/definitionBox"
         android:layout_marginStart="@dimen/three_x"/>
 
 
