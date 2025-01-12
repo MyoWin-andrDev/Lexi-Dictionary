@@ -13,25 +13,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/two_x"
+        android:layout_marginStart="@dimen/two_x"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="@dimen/three_x"
-            android:layout_height="27dp"
-            android:text="1"
-            android:textSize="12sp"
-            android:fontFamily="@font/nunito_sans_regular"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/blackText"
-            android:background="@drawable/circleview_blue"/>
+<!--        <TextView-->
+<!--            android:layout_width="@dimen/three_x"-->
+<!--            android:layout_height="27dp"-->
+<!--            android:text="1"-->
+<!--            android:textSize="12sp"-->
+<!--            android:fontFamily="@font/nunito_sans_regular"-->
+<!--            android:textStyle="bold"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/blackText"-->
+<!--            android:background="@drawable/circle_view_purple"/>-->
 
         <TextView
+            android:id="@+id/sGram"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/one_x"
             android:fontFamily="@font/raleway_medium"
-            android:text="Noun"
+            android:text="Phrases"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -45,16 +47,36 @@
         app:layout_constraintTop_toBottomOf="@id/gerundLayout"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/senDefinition"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sgram1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informal : "
+                android:textColor="@color/blue"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"/>
+
+
+            <TextView
+                android:id="@+id/drp1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the act or process of organization"
+                android:textColor="@color/blackText"
+                android:fontFamily="@font/opensans_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -132,16 +154,36 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/senShortDefinition"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sgram2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informal : "
+                android:textColor="@color/blue"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"/>
+
+
+            <TextView
+                android:id="@+id/drp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the act or process of organization"
+                android:textColor="@color/blackText"
+                android:fontFamily="@font/opensans_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -219,16 +261,36 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/subSenDefinition"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sgram3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informal : "
+                android:textColor="@color/blue"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"/>
+
+
+            <TextView
+                android:id="@+id/drp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the act or process of organization"
+                android:textColor="@color/blackText"
+                android:fontFamily="@font/opensans_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -306,16 +368,36 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/subSenShortDefinition"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="the act or process of organization"
-            android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
-            android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sgram4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informal : "
+                android:textColor="@color/blue"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"/>
+
+
+            <TextView
+                android:id="@+id/drp4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the act or process of organization"
+                android:textColor="@color/blackText"
+                android:fontFamily="@font/opensans_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -395,10 +477,10 @@
 
     </LinearLayout>
 
-<!--    End Line-->
-    
+    <!--    End Line-->
 
 
-    
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -155,6 +155,9 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
 //            binding.subSenShortDefinition.isVisible = false
 //            binding.subSenShortDefEg1.isVisible = false
 //        }
-        DefinitionHandler().handleDefAndEg(learnerDataItemList, 0, holder)
+        val sSEQIndices = learnerDataItemList[0].def[0].sseq.indices
+        for(i in sSEQIndices) {
+            DefinitionHandler().handleDefAndEg(learnerDataItemList, i, holder)
+        }
     }
 }

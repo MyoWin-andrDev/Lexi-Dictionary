@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lorem_ipsum"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             android:fontFamily="@font/opensans_medium" />
 
 
@@ -116,6 +116,58 @@
         app:layout_constraintStart_toStartOf="@id/definitionBox"
         app:layout_constraintEnd_toEndOf="@id/definitionBox"
         app:layout_constraintTop_toBottomOf="@id/definitionBox"
+        android:layout_marginStart="@dimen/three_x"/>
+
+    <LinearLayout
+        android:id="@+id/seeMoreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/definitionRecycler"
+        android:layout_margin="@dimen/one_x"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seeMoreMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See More "
+                android:textSize="16sp"
+                android:fontFamily="@font/raleway_medium"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bottom_icon"
+                android:layout_marginTop="2dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seeMoreLayout"
+            android:paddingStart="@dimen/two_x"
+            android:paddingEnd="@dimen/two_x"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/additionalRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/definitionBox"
+        app:layout_constraintEnd_toEndOf="@id/definitionBox"
+        app:layout_constraintTop_toBottomOf="@id/seeMoreLayout"
         android:layout_marginStart="@dimen/three_x"/>
 
 
