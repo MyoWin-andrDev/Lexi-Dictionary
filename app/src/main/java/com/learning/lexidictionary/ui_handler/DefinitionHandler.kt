@@ -2,18 +2,19 @@ package com.learning.lexidictionary.ui_handler
 
 import android.annotation.SuppressLint
 import android.util.Log
-import android.view.LayoutInflater
 import androidx.core.view.isVisible
 import com.google.gson.Gson
+import com.learning.lexidictionary.adapter.AdditionalAdapter
 import com.learning.lexidictionary.adapter.DefinitionAdapter
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
-import com.learning.lexidictionary.model.learnerEdition.DefinitionDetail
+import com.learning.lexidictionary.model.learnerEdition.Dro
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.model.learnerEdition.defDetail
 
 class DefinitionHandler {
     private val defClass = Definition()
+   // private val definitionHandler = DefinitionHandler()
     //Retrieving Data At Index
     @SuppressLint("SuspiciousIndentation")
     fun handleDefAndEg(learnerDataItem: List<LearnerDataItem>, index : Int, binding : DefinitionAdapter.PhrasesViewHolder){
@@ -39,7 +40,7 @@ class DefinitionHandler {
                 //Verbal Illustrations: vis
                 else if (unknownValue == "vis"){
                     val visList = unknownList[1] as List<*>
-                    val exampleList = Definition().linkedTreeMapToList(visList)
+                    val exampleList = Definition().linkedTreeMapToEgList(visList)
                     Log.d("exampleT", exampleList[0].t)
                     setExample(exampleList[0].t, index, binding)
                 }
@@ -53,7 +54,7 @@ class DefinitionHandler {
                     }
                     val vis = unsFirstIndex[1] as List<*>
                     if( vis[0] == "vis"){
-                        val tList = Definition().linkedTreeMapToList(vis[1] as List<*>)
+                        val tList = Definition().linkedTreeMapToEgList(vis[1] as List<*>)
                         Log.d("t", tList[0].t)//Vis Text
                     }
                 }
@@ -66,7 +67,7 @@ class DefinitionHandler {
                         Log.d("snoteItem", sNoteItem[1].toString())//
                     }
                     else if (stringValue == "vis"){
-                        val sNoteVisList = defClass.linkedTreeMapToList(sNoteItem[1] as List<*>)
+                        val sNoteVisList = defClass.linkedTreeMapToEgList(sNoteItem[1] as List<*>)
                         Log.d("snoteVisList", sNoteVisList[0].t.toString())//t Value
                     }
                 }
@@ -75,6 +76,12 @@ class DefinitionHandler {
         else if(value == "sen"){
 
         }
+    }
+    //Defined Run-Ons: dros
+    fun handlePhraseAndUsage(learnerDataItem: List<LearnerDataItem>, index: Int, binding: AdditionalAdapter.AdditionalViewHolder){
+        val dros = learnerDataItem[0].dros as List<Dro>
+        val drosList = dros[0].drp
+        Log.d("drosList", drosList.toString())
     }
 
     fun getMainDef(learnerDataItem: List<LearnerDataItem>, binding : ActivityDefinationBinding){

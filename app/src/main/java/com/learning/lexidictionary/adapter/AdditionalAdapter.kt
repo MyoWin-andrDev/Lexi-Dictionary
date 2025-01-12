@@ -4,12 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.AdditionalLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
+import com.learning.lexidictionary.ui_handler.DefinitionHandler
 
 class AdditionalAdapter(val context : Context, val learnerItemList : List<LearnerDataItem>) : RecyclerView.Adapter<AdditionalAdapter.AdditionalViewHolder>() {
-
+    private val defClass = Definition()
+    private val defHandlerClass = DefinitionHandler()
     class AdditionalViewHolder (private val binding : AdditionalLayoutBinding) : RecyclerView.ViewHolder(binding.root){
 
     }
@@ -29,5 +31,6 @@ class AdditionalAdapter(val context : Context, val learnerItemList : List<Learne
     override fun onBindViewHolder(holder: AdditionalViewHolder, position: Int) {
         //TODO("Not yet implemented")
         val learnerItem = learnerItemList[position]
+        defHandlerClass.handlePhraseAndUsage(learnerItemList, 0, holder)
     }
 }

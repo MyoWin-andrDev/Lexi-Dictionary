@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.learning.lexidictionary.adapter.AdditionalAdapter
 import com.learning.lexidictionary.adapter.DefinitionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.data.Definition
@@ -33,6 +34,7 @@ class DefinitionActivity : AppCompatActivity() {
         wordId = intent.getStringExtra("id").toString()
         Log.d("wordId",wordId)
         binding.definitionRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.additionalRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         loadResultList(wordId)
     }
 
@@ -62,6 +64,7 @@ class DefinitionActivity : AppCompatActivity() {
                     //Definition
                     DefinitionHandler().getMainDef(learnerList, binding)
                     binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, learnerList, wordId)
+                    binding.additionalRecycler.adapter = AdditionalAdapter(this@DefinitionActivity, learnerList)
                    // val largest = getItemSize(wordId, listOf(result))
 //                        when (definition.size) {
 //                            1 -> binding.definitionText1.text = replacedDefList[0]

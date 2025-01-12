@@ -2,6 +2,7 @@ package com.learning.lexidictionary.data
 
 import android.util.Log
 import com.google.gson.Gson
+import com.learning.lexidictionary.model.learnerEdition.Dro
 import com.learning.lexidictionary.model.learnerEdition.Eg
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 
@@ -57,9 +58,14 @@ class Definition {
         }
     }
 
-    fun linkedTreeMapToList( list : List<*>) : List<Eg>{
+    fun linkedTreeMapToEgList(list : List<*>) : List<Eg>{
         val gson = Gson()
         val formattedList = gson.fromJson(gson.toJson(list), Array<Eg>::class.java).toList()
         return formattedList
+    }
+    fun linkedTreeMapToDroList(list : List<*>) : List<Dro>{
+        val gson = Gson()
+        val formattedList = gson.fromJson(gson.toJson(list), Array<Dro>::class.java).toList()
+        return  formattedList
     }
 }
