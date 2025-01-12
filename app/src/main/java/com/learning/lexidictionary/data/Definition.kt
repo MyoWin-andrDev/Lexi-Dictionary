@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.learning.lexidictionary.model.learnerEdition.Dro
 import com.learning.lexidictionary.model.learnerEdition.Eg
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
+import com.learning.lexidictionary.model.learnerEdition.senseItem
 
 class Definition {
     fun getDefinition(learnerDataItem: List<LearnerDataItem>) : List<*>{
@@ -66,6 +67,11 @@ class Definition {
     fun linkedTreeMapToDroList(list : List<*>) : List<Dro>{
         val gson = Gson()
         val formattedList = gson.fromJson(gson.toJson(list), Array<Dro>::class.java).toList()
+        return  formattedList
+    }
+    fun linkedTreeMapToSenseList(array : Array<*>) : List<senseItem>{
+        val gson = Gson()
+        val formattedList = gson.fromJson(gson.toJson(array), Array<senseItem>::class.java).toList()
         return  formattedList
     }
 }

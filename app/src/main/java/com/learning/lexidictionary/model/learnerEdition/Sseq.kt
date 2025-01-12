@@ -23,3 +23,16 @@ data class unsItem(
     val textList : List<String>,
     val visList : List<Eg>
 )
+
+data class senseItem(
+    val sls: List<String>,
+    val dt: List<*>
+)
+data class dt(
+    val text : String,
+    val value : String
+)
+data class vrsItem(
+    val vl: String,
+    val va: String
+)

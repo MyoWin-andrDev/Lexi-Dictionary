@@ -11,9 +11,12 @@ import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.Dro
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.model.learnerEdition.defDetail
+import com.learning.lexidictionary.model.learnerEdition.dt
+import com.learning.lexidictionary.model.learnerEdition.senseItem
 
 class DefinitionHandler {
     private val defClass = Definition()
+    private val gson = Gson()
    // private val definitionHandler = DefinitionHandler()
     //Retrieving Data At Index
     @SuppressLint("SuspiciousIndentation")
@@ -81,7 +84,17 @@ class DefinitionHandler {
     fun handlePhraseAndUsage(learnerDataItem: List<LearnerDataItem>, index: Int, binding: AdditionalAdapter.AdditionalViewHolder){
         val dros = learnerDataItem[0].dros as List<Dro>
         val drosList = dros[0].drp
-        Log.d("drosList", drosList.toString())
+        val dtList = dros[3].def[0].sseq[index][0] as List<*>
+        if(dtList[0] == "sense"){
+          val senseItem = defClass.linkedTreeMapToSenseList(arrayOf(dtList[1]))
+            if(senseItem[0].dt != null) {
+                val dtItem = senseItem[0].dt[0] as List<*>
+                if( dtItem[0] == "text"){
+                    Log.d("dtDx", dtItem[1].toString()) // dx
+                }
+            }
+        }
+        Log.d("dtKist", dtList.toString())
     }
 
     fun getMainDef(learnerDataItem: List<LearnerDataItem>, binding : ActivityDefinationBinding){
