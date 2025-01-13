@@ -2,31 +2,27 @@ package com.learning.lexidictionary.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
-import com.learning.lexidictionary.model.learnerEdition.Eg
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.ui_handler.DefinitionHandler
 
-class DefinitionAdapter(val context : Context, val learnerDataItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.PhrasesViewHolder>(){
+class DefinitionAdapter(val context : Context, val learnerDataItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.DefinitionViewHolder>(){
     val defClass = Definition()
     val definitionList = defClass.getDefinition(learnerDataItemList)
 
-    class PhrasesViewHolder ( val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
+    class DefinitionViewHolder (val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhrasesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DefinitionViewHolder {
        // TODO("Not yet implemented")
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = DefinitonLayoutBinding.inflate(layoutInflater)
-        return PhrasesViewHolder(binding)
+        return DefinitionViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -36,7 +32,7 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
 
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: PhrasesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DefinitionViewHolder, position: Int) {
         //  TODO("Not yet implemented")
         val binding = holder.binding
         val definitionData = learnerDataItemList[position]

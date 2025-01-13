@@ -12,8 +12,7 @@ import com.learning.lexidictionary.ui_handler.DefinitionHandler
 class AdditionalAdapter(val context : Context, val learnerItemList : List<LearnerDataItem>) : RecyclerView.Adapter<AdditionalAdapter.AdditionalViewHolder>() {
     private val defClass = Definition()
     private val defHandlerClass = DefinitionHandler()
-    class AdditionalViewHolder (private val binding : AdditionalLayoutBinding) : RecyclerView.ViewHolder(binding.root){
-
+    class AdditionalViewHolder (val binding : AdditionalLayoutBinding) : RecyclerView.ViewHolder(binding.root){
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdditionalViewHolder {

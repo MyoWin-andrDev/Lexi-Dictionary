@@ -19,7 +19,7 @@
             android:exported="true" />
         <activity
             android:name=".view.LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.IntroActivity"
             android:exported="true">

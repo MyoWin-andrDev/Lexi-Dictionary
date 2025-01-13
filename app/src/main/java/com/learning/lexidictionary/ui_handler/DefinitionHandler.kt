@@ -12,7 +12,6 @@ import com.learning.lexidictionary.model.learnerEdition.Dro
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.model.learnerEdition.defDetail
 import com.learning.lexidictionary.model.learnerEdition.dt
-import com.learning.lexidictionary.model.learnerEdition.senseItem
 
 class DefinitionHandler {
     private val defClass = Definition()
@@ -20,7 +19,7 @@ class DefinitionHandler {
    // private val definitionHandler = DefinitionHandler()
     //Retrieving Data At Index
     @SuppressLint("SuspiciousIndentation")
-    fun handleDefAndEg(learnerDataItem: List<LearnerDataItem>, index : Int, binding : DefinitionAdapter.PhrasesViewHolder){
+    fun handleDefAndEg(learnerDataItem: List<LearnerDataItem>, index : Int, binding : DefinitionAdapter.DefinitionViewHolder){
         val sSEQIndices = learnerDataItem[0].def[0].sseq.indices
         val sSEQList = learnerDataItem[0].def[0].sseq[index][0] as List<*>
         //Decision Making of "sense" or "sen"
@@ -81,20 +80,15 @@ class DefinitionHandler {
         }
     }
     //Defined Run-Ons: dros
+    @SuppressLint("SuspiciousIndentation")
     fun handlePhraseAndUsage(learnerDataItem: List<LearnerDataItem>, index: Int, binding: AdditionalAdapter.AdditionalViewHolder){
         val dros = learnerDataItem[0].dros as List<Dro>
         val drosList = dros[0].drp
-        val dtList = dros[3].def[0].sseq[index][0] as List<*>
-        if(dtList[0] == "sense"){
-          val senseItem = defClass.linkedTreeMapToSenseList(arrayOf(dtList[1]))
-            if(senseItem[0].dt != null) {
-                val dtItem = senseItem[0].dt[0] as List<*>
-                if( dtItem[0] == "text"){
-                    Log.d("dtDx", dtItem[1].toString()) // dx
-                }
-            }
+        //Set Phrases
+        dros.indices.forEach { i ->
+            setPhrases(dros[i].drp, i , binding)
+
         }
-        Log.d("dtKist", dtList.toString())
     }
 
     fun getMainDef(learnerDataItem: List<LearnerDataItem>, binding : ActivityDefinationBinding){
@@ -102,7 +96,7 @@ class DefinitionHandler {
         binding.definitionText1.text = shortDef.substringAfter("{bc}").substringBefore("—")
     }
     //Set Def in UI
-    private fun setDefinition(def : String , index : Int,binding : DefinitionAdapter.PhrasesViewHolder){
+    private fun setDefinition(def : String , index : Int,binding : DefinitionAdapter.DefinitionViewHolder){
         when(index){
             1 -> {
                 binding.binding.senDefinition.text = defClass.replaceBCString(def)
@@ -122,7 +116,7 @@ class DefinitionHandler {
             }
         }
     }
-    private fun setExample(t : String, index : Int, binding : DefinitionAdapter.PhrasesViewHolder){
+    private fun setExample(t : String, index : Int, binding : DefinitionAdapter.DefinitionViewHolder){
         when(index){
             1 -> {
                 binding.binding.senDefEg1.text = defClass.replaceBCString(t)
@@ -139,6 +133,73 @@ class DefinitionHandler {
             in 4 .. 20 -> {
                 binding.binding.subSenShortDefEg1.text = defClass.replaceBCString(t)
                 binding.binding.subSenShortDefEg1.isVisible = true
+            }
+        }
+    }
+    private fun setPhrases(drp : String, index : Int, binding : AdditionalAdapter.AdditionalViewHolder){
+        when(index){
+            0 -> {
+                binding.binding.drp1.text = drp
+                binding.binding.drp1.isVisible = true
+            }
+            1 -> {
+                binding.binding.drp2.text = drp
+                binding.binding.drp2.isVisible = true
+            }
+            2 -> {
+                binding.binding.drp3.text = drp
+                binding.binding.drp3.isVisible = true
+            }
+            in 3..20 -> {
+                binding.binding.drp4.text = drp
+                binding.binding.drp4.isVisible = true
+            }
+        }
+    }
+    private fun setUsage(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
+        when(index){
+            0 -> {
+                binding.binding.usage1.text = usage
+                binding.binding.usage1.isVisible = true
+            }
+            1 -> {
+                binding.binding.usage2.text = usage
+                binding.binding.usage2.isVisible = true
+            }
+            2 -> {
+                binding.binding.usage3.text = usage
+                binding.binding.usage3.isVisible = true
+            }
+            3 -> {
+                binding.binding.usage4.text = usage
+                binding.binding.usage4.isVisible = true
+            }
+        }
+    }
+
+    fun retrieveUsageLogic(drosList : List<Dro>, index : Int){
+        val dtList = drosList[1].def[0].sseq[index][0] as List<*>
+        if(dtList[0] == "sense"){
+            val senseItem = defClass.linkedTreeMapToSenseList(arrayOf(dtList[1]))
+            if(senseItem[0].dt != null) {
+                val dtItem = senseItem[0].dt[0] as List<*>
+                val unknownValue = dtItem[0] as String
+                if( unknownValue == "text"){
+                    Log.d("dtDx", dtItem[1].toString()) // dx
+                }
+                if( unknownValue == "uns"){
+                    val unsItem = dtItem[1] as List<*>
+                    val unsFirstIndex = unsItem[0] as List<*>
+                    val textArray = unsFirstIndex[0] as List<String>// there is two values in it
+                    if( textArray[0] == "text"){
+                        Log.d("usage", textArray[1])
+                    }
+                    val vis = unsFirstIndex[1] as List<*>
+                    if( vis[0] == "vis"){
+                        val tList = Definition().linkedTreeMapToEgList(vis[1] as List<*>)
+                        Log.d("t", tList[0].t)//Vis Text
+                    }
+                }
             }
         }
     }

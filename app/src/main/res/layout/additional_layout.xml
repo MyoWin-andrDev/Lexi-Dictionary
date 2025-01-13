@@ -48,6 +48,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/phraseText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/three_x"
@@ -63,7 +64,7 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="center_horizontal"/>
 
 
             <TextView
@@ -75,6 +76,32 @@
                 android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="used to give added force to a negative statement"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
 
         </LinearLayout>
 
@@ -100,7 +127,7 @@
 
 
                 <TextView
-                    android:id="@+id/senDefEg1"
+                    android:id="@+id/usage1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
@@ -207,7 +234,7 @@
 
 
                 <TextView
-                    android:id="@+id/senShortDefEg1"
+                    android:id="@+id/usage2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
@@ -314,7 +341,7 @@
 
 
                 <TextView
-                    android:id="@+id/subSenDefEg1"
+                    android:id="@+id/usage3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
@@ -421,7 +448,7 @@
 
 
                 <TextView
-                    android:id="@+id/subSenShortDefEg1"
+                    android:id="@+id/usage4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"

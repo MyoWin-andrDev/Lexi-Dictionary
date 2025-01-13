@@ -15,6 +15,13 @@ Lexi is an innovative Android online dictionary application designed to provide 
 - **Image Search**: Enable users to search for words by capturing images.
 - **Offline Mode with Room Database**: Provide offline word search capability by storing word data locally using Room.
 
+## Screenshots
+<div style="display: flex; justify-content: space-around;">
+    <img src="images/intro.jpg" alt="Intro Screen" width="720"/>
+    <img src="images/login.jpg" alt="Login Screen" width="720"/>
+    <img src="images/main_ui.jpg" alt="Main UI" width="720"/>
+</div>
+
 ## Technologies Used
 - **Programming Language**: Kotlin
 - **UI Design**: XML
