@@ -13,13 +13,13 @@ interface DictionaryService{
     @GET("learners/json/{query}")
     fun getLearnerResult (
         @Path("query") query: String,
-        @Query("key") key : String = "636fd0e7-95e2-476a-8495-eee2f107cf16"
+        @Query("key") key : String = "Enter Your API Keys"
     ) : Call<LearnerData>
 
     //StudentEdition
     @GET("/sd4/json/{query}")
     fun getStudentResult (
         @Path("query") query : String,
-        @Query("key") key : String = "d6b440b8-391a-44b8-8889-c080bc87d68a"
+        @Query("key") key : String = "Enter Your API Keys"
     ) : Call<StudentData>
 }
