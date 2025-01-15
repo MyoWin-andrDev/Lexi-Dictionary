@@ -167,6 +167,7 @@
 
     </LinearLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/additionalRecycler"
         android:layout_width="match_parent"
@@ -174,7 +175,10 @@
         app:layout_constraintStart_toStartOf="@id/definitionBox"
         app:layout_constraintEnd_toEndOf="@id/definitionBox"
         app:layout_constraintTop_toBottomOf="@id/seeMoreLayout"
-        android:layout_marginStart="@dimen/three_x"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/three_x"
+        android:layout_marginBottom="@dimen/three_x"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

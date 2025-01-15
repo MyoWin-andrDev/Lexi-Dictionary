@@ -74,19 +74,21 @@
                 android:text="the act or process of organization"
                 android:textColor="@color/blackText"
                 android:fontFamily="@font/opensans_medium"
-                android:textSize="16sp"
-                />
+                android:textSize="16sp"/>
 
         </LinearLayout>
-
+<!--        Usage Layout 1-->
         <LinearLayout
+            android:id="@+id/usageLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/usage_background"
             android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,9 +99,10 @@
                 android:textColor="@color/grey_bright" />
 
             <TextView
+                android:id="@+id/usage1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="used to give added force to a negative statement"
+                android:text=""
                 android:fontFamily="@font/opensans_regular"
                 android:textColor="@color/blackText"/>
 
@@ -127,7 +130,7 @@
 
 
                 <TextView
-                    android:id="@+id/usage1"
+                    android:id="@+id/eg1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
@@ -211,6 +214,36 @@
                 />
 
         </LinearLayout>
+        <!--        Usage Layout 2-->
+        <LinearLayout
+            android:id="@+id/usageLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -234,7 +267,7 @@
 
 
                 <TextView
-                    android:id="@+id/usage2"
+                    android:id="@+id/eg2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
@@ -318,6 +351,36 @@
                 />
 
         </LinearLayout>
+        <!--        Usage Layout 3-->
+        <LinearLayout
+            android:id="@+id/usageLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -341,7 +404,7 @@
 
 
                 <TextView
-                    android:id="@+id/usage3"
+                    android:id="@+id/eg3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
@@ -425,6 +488,36 @@
                 />
 
         </LinearLayout>
+        <!--        Usage Layout 4-->
+        <LinearLayout
+            android:id="@+id/usageLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -448,7 +541,7 @@
 
 
                 <TextView
-                    android:id="@+id/usage4"
+                    android:id="@+id/eg4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"

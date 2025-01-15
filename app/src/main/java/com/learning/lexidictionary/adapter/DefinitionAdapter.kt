@@ -2,14 +2,17 @@ package com.learning.lexidictionary.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
-import com.learning.lexidictionary.ui_handler.DefinitionHandler
+import com.learning.lexidictionary.handler.DefinitionHandler
 
+@RequiresApi(Build.VERSION_CODES.O)
 class DefinitionAdapter(val context : Context, val learnerDataItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<DefinitionAdapter.DefinitionViewHolder>(){
     val defClass = Definition()
     val definitionList = defClass.getDefinition(learnerDataItemList)
@@ -153,7 +156,7 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
 //        }
         val sSEQIndices = learnerDataItemList[0].def[0].sseq.indices
         for(i in sSEQIndices) {
-            DefinitionHandler().handleDefAndEg(learnerDataItemList, i, holder)
+            DefinitionHandler(context, wordId).handleDefAndEg(learnerDataItemList, i, holder)
         }
     }
 }

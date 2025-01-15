@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.AdditionalLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
-import com.learning.lexidictionary.ui_handler.DefinitionHandler
+import com.learning.lexidictionary.handler.DefinitionHandler
 
-class AdditionalAdapter(val context : Context, val learnerItemList : List<LearnerDataItem>) : RecyclerView.Adapter<AdditionalAdapter.AdditionalViewHolder>() {
+class AdditionalAdapter(val context : Context, val learnerItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<AdditionalAdapter.AdditionalViewHolder>() {
     private val defClass = Definition()
-    private val defHandlerClass = DefinitionHandler()
+    private val defHandlerClass = DefinitionHandler(context, wordId)
     class AdditionalViewHolder (val binding : AdditionalLayoutBinding) : RecyclerView.ViewHolder(binding.root){
     }
 

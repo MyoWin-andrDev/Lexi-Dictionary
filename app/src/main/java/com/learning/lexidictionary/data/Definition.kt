@@ -34,30 +34,6 @@ class Definition {
         return  dt
 
     }
-//    fun getExampleAtIndex(learnerDataItem: List<LearnerDataItem>, index : Int) : List<*>{
-//        val sseqList = learnerDataItem[0].def[0].sseq[index][0] as List<*>
-//    }
-
-    fun replaceBCList( list : List<String>) : List<String> {
-        val replacedList = list.map { list ->
-            val occurrence = list.split("{bc}").size - 1
-            when (occurrence) {
-                0 -> list
-                1 -> list.replace("{bc}", "\u2022 ")
-                else -> list.replaceFirst("{bc}","\u2022").replaceFirst("{bc}","\n\u2022")
-            }
-        }
-        return replacedList
-    }
-
-    fun replaceBCString( string : String) : String {
-        val occurrence = string.split("{bc}").size - 1
-       return when (occurrence) {
-            0 -> string
-            1 -> string.replace("{bc}", "\u2022 ")
-            else -> string.replaceFirst("{bc}","\u2022").replaceFirst("{bc}","\n\u003a")
-        }
-    }
 
     fun linkedTreeMapToEgList(list : List<*>) : List<Eg>{
         val gson = Gson()

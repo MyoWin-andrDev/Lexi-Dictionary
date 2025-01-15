@@ -13,5 +13,7 @@
     <color name="grey_bright">#8e9099</color> <!-- Grey font color for bright text -->
     <color name="blackText">#44464f</color> <!-- Black font color for bright text -->
     <color name="purple">#725573</color> <!-- solid  -->
-    <color name="greyBox">#f2f2f2</color>
+    <color name="lightGrey">#f2f2f2</color>
+    <color name="lightGreen">#C8E6C9</color> <!-- Light green for box -->
+    <color name="lightRed">#FFCDD2</color> <!-- Light red for box -->
 </resources>

@@ -10,10 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.learning.lexidictionary.adapter.AdditionalAdapter
 import com.learning.lexidictionary.adapter.DefinitionAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
-import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
-import com.learning.lexidictionary.ui_handler.DefinitionHandler
+import com.learning.lexidictionary.handler.DefinitionHandler
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -62,26 +61,9 @@ class DefinitionActivity : AppCompatActivity() {
                     val phonetic = pronunciation[0].ipa
                     binding.phonetic.text = "/$phonetic/"
                     //Definition
-                    DefinitionHandler().getMainDef(learnerList, binding)
+                    DefinitionHandler(this@DefinitionActivity, wordId).getMainDef(learnerList, binding)
                     binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, learnerList, wordId)
-                    binding.additionalRecycler.adapter = AdditionalAdapter(this@DefinitionActivity, learnerList)
-                   // val largest = getItemSize(wordId, listOf(result))
-//                        when (definition.size) {
-//                            1 -> binding.definitionText1.text = replacedDefList[0]
-//                            2 -> {
-//                                binding.definitionText1.text = replacedDefList[0]
-//                                binding.definitionText2.isVisible = true
-//                                binding.definitionText2.text = replacedDefList[1]
-//                            }
-//
-//                            in 3..10 -> {
-//                                binding.definitionText1.text = replacedDefList[0]
-//                                binding.definitionText2.isVisible = true
-//                                binding.definitionText2.text = replacedDefList[1]
-//                                binding.definitionText3.isVisible = true
-//                                binding.definitionText3.text = replacedDefList[2]
-//                        }
-//                    }
+                    binding.additionalRecycler.adapter = AdditionalAdapter(this@DefinitionActivity, learnerList, wordId)
                 }
             }
 
