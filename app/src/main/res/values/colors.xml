@@ -10,6 +10,7 @@
     <color name="yellow">#FFC107</color> <!-- Adjusted to a more suitable yellow -->
     <color name="red">#F44336</color> <!-- Adjusted to a more suitable red -->
     <color name="grey">#9E9E9E</color> <!-- Grey font color for light text -->
+    <color name="greyText">#757780</color> <!-- Grey font color for bright text -->
     <color name="grey_bright">#8e9099</color> <!-- Grey font color for bright text -->
     <color name="blackText">#44464f</color> <!-- Black font color for bright text -->
     <color name="purple">#725573</color> <!-- solid  -->

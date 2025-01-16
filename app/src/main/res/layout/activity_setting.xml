@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Account"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:fontFamily="@font/raleway_medium"
             android:textStyle="bold"
             android:textColor="@color/blue"
@@ -71,6 +71,7 @@
             android:textSize="16dp"
             android:textColor="@color/blackText"
             android:fontFamily="@font/opensans_regular"
+            android:textStyle="bold"
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"/>
 
@@ -83,11 +84,377 @@
             android:text="to Lexi Dictionary"
             android:textColor="@color/grey_bright"/>
 
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    Display Layout-->
+    <LinearLayout
+        android:id="@+id/displayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/mainLayout"
+        app:layout_constraintEnd_toEndOf="@id/mainLayout"
+        app:layout_constraintTop_toBottomOf="@id/mainLayout"
+        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginStart="@dimen/two_x"
+        android:layout_marginEnd="@dimen/two_x"
+        android:layout_marginBottom="@dimen/two_x"
+        android:padding="@dimen/one_x"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Display"
+            android:textSize="16sp"
+            android:fontFamily="@font/raleway_bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/one_x"/>
+<!--        Night Mode-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
 
+        </LinearLayout>
+<!--        Font Size-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+<!--        Orientation-->
+        <LinearLayout
+        android:id="@+id/nightModeLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/one_x"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Night Mode"
+            android:textSize="14sp"
+            android:fontFamily="@font/opensans_medium"
+            android:textColor="@color/greyText"/>
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+<!--        Custom View-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+<!--    Setting-->
+    <LinearLayout
+        android:id="@+id/settingsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/displayLayout"
+        app:layout_constraintEnd_toEndOf="@id/displayLayout"
+        app:layout_constraintTop_toBottomOf="@id/displayLayout"
+        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginStart="@dimen/two_x"
+        android:layout_marginEnd="@dimen/two_x"
+        android:layout_marginBottom="@dimen/two_x"
+        android:padding="@dimen/one_x"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Display"
+            android:textSize="16sp"
+            android:fontFamily="@font/raleway_bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/one_x"/>
+        <!--        Night Mode-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+        <!--        Font Size-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+        <!--        Orientation-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+        <!--        Custom View-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+<!--    Information-->
+
+    <LinearLayout
+        android:id="@+id/informationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/settingsLayout"
+        app:layout_constraintEnd_toEndOf="@id/settingsLayout"
+        app:layout_constraintTop_toBottomOf="@id/settingsLayout"
+        android:layout_marginTop="@dimen/three_x"
+        android:layout_marginStart="@dimen/two_x"
+        android:layout_marginEnd="@dimen/two_x"
+        android:layout_marginBottom="@dimen/two_x"
+        android:padding="@dimen/one_x"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Display"
+            android:textSize="16sp"
+            android:fontFamily="@font/raleway_bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/one_x"/>
+        <!--        Night Mode-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+        <!--        Font Size-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+        <!--        Orientation-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+        <!--        Custom View-->
+        <LinearLayout
+            android:id="@+id/nightModeLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/one_x"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/greyText"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
