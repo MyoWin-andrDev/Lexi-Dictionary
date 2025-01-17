@@ -3,6 +3,7 @@ package com.learning.lexidictionary.handler
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.text.toSpannable
 import androidx.core.view.isVisible
@@ -95,7 +96,7 @@ class UIHandler(val context : Context, val wordId : String) {
     fun setPhraseExample(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
         when(index){
             0 -> {
-                binding.binding.eg1.text = stringHandler.typefaceSearchQuery(usage, wordId, context)
+                binding.binding.eg1.text = stringHandler.hyperLinkGuidance(usage, wordId, context)
                 binding.binding.eg1.isVisible = true
             }
             1 -> {

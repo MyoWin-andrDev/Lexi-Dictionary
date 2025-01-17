@@ -57,6 +57,26 @@ class StringHandler(val searchQuery: String, val context: Context) {
         return spannableString
     }
 
+    fun hyperLinkGuidance(label : String, searchQuery : String, context : Context) : SpannableString{
+        val newLabel = label
+            .replaceFirst("{dx}","")
+            .replaceFirst("{/dx}","")
+            .replaceFirst("{dxt|","")
+            .replaceFirst("||}","")
+        val seeIndex = newLabel.indexOf("see")
+        val seeLength = seeIndex + "see".length
+        val startIndex = newLabel.substring(seeLength).length
+        val endIndex = newLabel.length
+        spannableString.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(context,R.color.blue)),
+            startIndex,
+            endIndex,
+            SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        Log.d("start", startIndex.toString())
+        return typefaceSearchQuery(newLabel.capitalize(),searchQuery,context)
+    }
+
     fun replaceBCString( string : String) : SpannableString {
         val occurrence = string.split("{bc}").size - 1
         val formattedString = when (occurrence) {
