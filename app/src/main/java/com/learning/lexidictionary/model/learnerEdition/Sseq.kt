@@ -6,7 +6,8 @@ data class Eg(
 data class defDetail(
     val sn : String,
     val sgram : String,
-    val dt : List<*>
+    val dt : List<*>,
+    val sls : List<String>
 )
 //Unofficial DefList
 data class DefinitionDetail(

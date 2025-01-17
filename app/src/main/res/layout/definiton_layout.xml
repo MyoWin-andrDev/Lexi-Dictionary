@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
+                    android:fontFamily="@font/opensans_regular"
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"

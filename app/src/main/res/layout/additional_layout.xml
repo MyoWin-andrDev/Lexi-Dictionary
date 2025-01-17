@@ -56,7 +56,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sgram1"
+                android:id="@+id/sls1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
@@ -64,7 +64,8 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"/>
 
 
             <TextView
@@ -192,7 +193,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sgram2"
+                android:id="@+id/sls2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
@@ -200,7 +201,8 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="bottom"
+                android:visibility="gone"/>
 
 
             <TextView
@@ -329,7 +331,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sgram3"
+                android:id="@+id/sls3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
@@ -337,7 +339,8 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="bottom"
+                android:visibility="gone"/>
 
 
             <TextView
@@ -466,7 +469,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sgram4"
+                android:id="@+id/sls4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
@@ -474,7 +477,8 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="bottom"
+                android:visibility="gone"/>
 
 
             <TextView

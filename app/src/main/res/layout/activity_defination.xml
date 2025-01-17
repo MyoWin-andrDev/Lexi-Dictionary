@@ -145,6 +145,7 @@
                 android:text="See More "
                 android:textSize="16sp"
                 android:fontFamily="@font/raleway_medium"
+                android:textColor="@color/greyText"
                 android:textStyle="bold"/>
 
             <ImageView
@@ -155,10 +156,10 @@
 
         </LinearLayout>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/blue"
+            android:background="@color/grey"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/seeMoreLayout"

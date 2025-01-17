@@ -1,14 +1,17 @@
 package com.learning.lexidictionary.adapter
 
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.data.Definition
 import com.learning.lexidictionary.databinding.AdditionalLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.handler.DefinitionHandler
 
+@RequiresApi(Build.VERSION_CODES.O)
 class AdditionalAdapter(val context : Context, val learnerItemList : List<LearnerDataItem>, val wordId : String) : RecyclerView.Adapter<AdditionalAdapter.AdditionalViewHolder>() {
     private val defClass = Definition()
     private val defHandlerClass = DefinitionHandler(context, wordId)

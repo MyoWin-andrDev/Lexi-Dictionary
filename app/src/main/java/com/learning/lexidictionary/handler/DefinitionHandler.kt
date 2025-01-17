@@ -72,7 +72,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                         }
                         else if (stringValue == "vis"){
                             val sNoteVisList = defClass.linkedTreeMapToEgList(sNoteItem[1] as List<*>)
-                            Log.d("snoteVisList", sNoteVisList[0].t.toString())//t Value
+                            Log.d("snoteVisList", sNoteVisList[0].t)//t Value
                         }
                     }
                 }
@@ -103,6 +103,10 @@ class DefinitionHandler(val context : Context, val wordId : String) {
         val dtList = drosList[index].def[0].sseq[0][0] as List<*>
         if(dtList[0] == "sense"){
             val senseItem = defClass.linkedTreeMapToSenseList(arrayOf(dtList[1]))
+            //Subject/Status Labels: sls
+            if(senseItem[0].sls != null){
+                uiHandler.setSLS(senseItem[0].sls[0], index, binding)
+            }
             if(senseItem[0].dt != null) {
                 val dtItem = senseItem[0].dt[0] as List<*>
                 val unknownValue = dtItem[0] as String

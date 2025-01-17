@@ -1,12 +1,14 @@
 package com.learning.lexidictionary.handler
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.core.text.toSpannable
 import androidx.core.view.isVisible
 import com.learning.lexidictionary.adapter.AdditionalAdapter
 import com.learning.lexidictionary.adapter.DefinitionAdapter
-import com.learning.lexidictionary.data.Definition
+
 @RequiresApi(Build.VERSION_CODES.O)
 class UIHandler(val context : Context, val wordId : String) {
     private val stringHandler = StringHandler(wordId, context)
@@ -33,19 +35,19 @@ class UIHandler(val context : Context, val wordId : String) {
     fun setDefExample(t : String, index : Int, binding : DefinitionAdapter.DefinitionViewHolder){
         when(index){
             1 -> {
-                binding.binding.senDefEg1.text = stringHandler.replaceBCString(t.replace("{it}","").replace("{/it}", ""))
+                binding.binding.senDefEg1.text = stringHandler.typefaceSearchQuery(t, wordId, context)
                 binding.binding.senDefEg1.isVisible = true
             }
             2 -> {
-                binding.binding.senShortDefEg1.text = stringHandler.replaceBCString(t)
+                binding.binding.senShortDefEg1.text = stringHandler.typefaceSearchQuery(t, wordId, context)
                 binding.binding.senShortDefEg1.isVisible = true
             }
             3 -> {
-                binding.binding.subSenDefEg1.text = stringHandler.replaceBCString(t)
+                binding.binding.subSenDefEg1.text = stringHandler.typefaceSearchQuery(t, wordId, context)
                 binding.binding.subSenDefEg1.isVisible = true
             }
             in 4 .. 20 -> {
-                binding.binding.subSenShortDefEg1.text = stringHandler.replaceBCString(t)
+                binding.binding.subSenShortDefEg1.text = stringHandler.typefaceSearchQuery(t, wordId, context)
                 binding.binding.subSenShortDefEg1.isVisible = true
             }
         }
@@ -93,20 +95,42 @@ class UIHandler(val context : Context, val wordId : String) {
     fun setPhraseExample(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
         when(index){
             0 -> {
-                binding.binding.eg1.text = usage
+                binding.binding.eg1.text = stringHandler.typefaceSearchQuery(usage, wordId, context)
                 binding.binding.eg1.isVisible = true
             }
             1 -> {
-                binding.binding.eg2.text = usage
+                binding.binding.eg2.text = stringHandler.typefaceSearchQuery(usage, wordId, context)
                 binding.binding.eg2.isVisible = true
             }
             2 -> {
-                binding.binding.eg3.text = usage
+                binding.binding.eg3.text = stringHandler.typefaceSearchQuery(usage, wordId, context)
                 binding.binding.eg3.isVisible = true
             }
             3 -> {
-                binding.binding.eg4.text = usage
+                binding.binding.eg4.text = stringHandler.typefaceSearchQuery(usage, wordId, context)
                 binding.binding.eg4.isVisible = true
+            }
+        }
+    }
+    //Subject/Status Labels: sls
+    @SuppressLint("SetTextI18n")
+    fun setSLS(status : String, index : Int, binding: AdditionalAdapter.AdditionalViewHolder){
+        when(index){
+            0 -> {
+                binding.binding.sls1.text = "${status.capitalize()} . "
+                binding.binding.sls1.isVisible = true
+            }
+            1 -> {
+                binding.binding.sls2.text = "${status.capitalize()} . "
+                binding.binding.sls2.isVisible = true
+            }
+            2 -> {
+                binding.binding.sls3.text = "${status.capitalize()} . "
+                binding.binding.sls3.isVisible = true
+            }
+            3 -> {
+                binding.binding.sls4.text = "${status.capitalize()} . "
+                binding.binding.sls4.isVisible = true
             }
         }
     }
