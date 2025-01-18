@@ -73,6 +73,12 @@ class StringHandler(val searchQuery: String, val context: Context) {
             endIndex,
             SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
         )
+        spannableString.setSpan(
+            UnderlineSpan(),
+            startIndex,
+            endIndex,
+            SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
         Log.d("start", startIndex.toString())
         return typefaceSearchQuery(newLabel.capitalize(),searchQuery,context)
     }
