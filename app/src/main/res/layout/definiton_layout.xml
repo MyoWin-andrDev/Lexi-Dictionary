@@ -54,7 +54,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -86,7 +87,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/senDefEg2"
@@ -141,7 +143,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -173,7 +176,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/senShortDefEg2"
@@ -228,7 +232,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -260,7 +265,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/subSenDefEg2"
@@ -315,7 +321,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -347,7 +354,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/subSenShortDefEg2"

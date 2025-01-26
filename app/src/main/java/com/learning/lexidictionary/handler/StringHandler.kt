@@ -63,24 +63,24 @@ class StringHandler(val searchQuery: String, val context: Context) {
             .replaceFirst("{/dx}","")
             .replaceFirst("{dxt|","")
             .replaceFirst("||}","")
-        val seeIndex = newLabel.indexOf("see")
-        val seeLength = seeIndex + "see".length
-        val startIndex = newLabel.substring(seeLength).length
+            .uppercase()
+        spannableString = SpannableString(newLabel)
+        val seeIndex = newLabel.indexOf("See")
+        val seeLength = seeIndex + "see".length + 2 // 2 for space index
         val endIndex = newLabel.length
         spannableString.setSpan(
             ForegroundColorSpan(ContextCompat.getColor(context,R.color.blue)),
-            startIndex,
+            seeLength,
             endIndex,
             SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         spannableString.setSpan(
             UnderlineSpan(),
-            startIndex,
+            seeLength,
             endIndex,
             SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-        Log.d("start", startIndex.toString())
-        return typefaceSearchQuery(newLabel.capitalize(),searchQuery,context)
+        return spannableString
     }
 
     fun replaceBCString( string : String) : SpannableString {
@@ -91,6 +91,13 @@ class StringHandler(val searchQuery: String, val context: Context) {
             else -> string.replaceFirst("{bc}","\u2022").replaceFirst("{bc}","\n\u003a")
         }
        return highlightSearchQuery(formattedString, searchQuery, context)
+    }
+
+    fun checkGuidanceWord(word : String, searchQuery: String, context: Context) : SpannableString{
+        if(word.startsWith("{dx}see")){
+            return hyperLinkGuidance(word,searchQuery,context)
+        }
+        return typefaceSearchQuery(word,searchQuery,context)
     }
 
 }
