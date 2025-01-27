@@ -27,6 +27,7 @@
             android:background="@drawable/circleview_blue"/>
 
         <TextView
+            android:id="@+id/gerundId"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/one_x"
@@ -39,7 +40,7 @@
     <!--        Sense Def-->
     <LinearLayout
         android:id="@+id/phraseLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gerundLayout"
@@ -54,9 +55,36 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
+        <!--        Usage Layout 1-->
+        <LinearLayout
+            android:id="@+id/usageLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:visibility="gone"/>
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
         <!--        Phrases Box-->
         <LinearLayout
             android:id="@+id/senDefEgLayout"
@@ -87,8 +115,7 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:layout_marginStart="@dimen/one_x"/>
 
                 <TextView
                     android:id="@+id/senDefEg2"
@@ -143,8 +170,37 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
+
+        <!--        Usage Layout 2-->
+        <LinearLayout
+            android:id="@+id/usageLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:visibility="gone"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -176,8 +232,7 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:layout_marginStart="@dimen/one_x"/>
 
                 <TextView
                     android:id="@+id/senShortDefEg2"
@@ -232,8 +287,37 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
+
+        <!--        Usage Layout 3-->
+        <LinearLayout
+            android:id="@+id/usageLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:visibility="gone"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -265,8 +349,7 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:layout_marginStart="@dimen/one_x"/>
 
                 <TextView
                     android:id="@+id/subSenDefEg2"
@@ -321,8 +404,37 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
+
+        <!--        Usage Layout 4-->
+        <LinearLayout
+            android:id="@+id/usageLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/usage_background"
+            android:padding="@dimen/one_x"
+            android:layout_marginStart="@dimen/two_x"
+            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:visibility="gone"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage : "
+                android:fontFamily="@font/opensans_italic"
+                android:textStyle="bold"
+                android:textColor="@color/grey_bright" />
+
+            <TextView
+                android:id="@+id/usage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/blackText"/>
+
+        </LinearLayout>
 
         <!--        Phrases Box-->
         <LinearLayout
@@ -354,8 +466,7 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:layout_marginStart="@dimen/one_x"/>
 
                 <TextView
                     android:id="@+id/subSenShortDefEg2"
@@ -404,9 +515,5 @@
     </LinearLayout>
 
 <!--    End Line-->
-    
-
-
-    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

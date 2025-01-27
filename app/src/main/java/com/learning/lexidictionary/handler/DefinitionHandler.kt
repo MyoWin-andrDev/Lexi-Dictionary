@@ -18,11 +18,13 @@ import com.learning.lexidictionary.model.learnerEdition.defDetail
 @RequiresApi(Build.VERSION_CODES.O)
 class DefinitionHandler(val context : Context, val wordId : String) {
     private val defClass = Definition()
-    private val gson = Gson()
     private val uiHandler = UIHandler(context, wordId)
     //Retrieving Data At Index
     @SuppressLint("SuspiciousIndentation")
     fun handleDefAndEg(learnerDataItem: List<LearnerDataItem>, index : Int, binding : DefinitionAdapter.DefinitionViewHolder){
+        //Set Gerund
+        val gerundId = learnerDataItem[0].fl
+        binding.binding.gerundId.text = gerundId.capitalize()
         val sSEQIndices = learnerDataItem[0].def[0].sseq.indices
         val sSEQList = learnerDataItem[0].def[0].sseq[index][0] as List<*>
         //Decision Making of "sense" or "sen"
@@ -85,10 +87,10 @@ class DefinitionHandler(val context : Context, val wordId : String) {
     //Defined Run-Ons: dros
     @SuppressLint("SuspiciousIndentation")
     fun handlePhraseAndUsage(learnerDataItem: List<LearnerDataItem>, index: Int, binding: AdditionalAdapter.AdditionalViewHolder){
-        val dros = learnerDataItem[0].dros as List<Dro>
-        val drosList = dros[0].drp
+        val dros = learnerDataItem[0].dros as? List<Dro>
+        val drosList = dros?.get(0)?.drp
         //Set Phrases
-        dros.indices.forEach { i ->
+        dros?.indices?.forEach { i ->
             uiHandler.setPhrases(dros[i].drp, i , binding)
             retrieveUsageLogic(dros,i , binding)
         }

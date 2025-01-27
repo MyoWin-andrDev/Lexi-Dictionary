@@ -16,17 +16,6 @@
         android:layout_marginStart="@dimen/two_x"
         android:orientation="horizontal">
 
-<!--        <TextView-->
-<!--            android:layout_width="@dimen/three_x"-->
-<!--            android:layout_height="27dp"-->
-<!--            android:text="1"-->
-<!--            android:textSize="12sp"-->
-<!--            android:fontFamily="@font/nunito_sans_regular"-->
-<!--            android:textStyle="bold"-->
-<!--            android:gravity="center"-->
-<!--            android:textColor="@color/blackText"-->
-<!--            android:background="@drawable/circle_view_purple"/>-->
-
         <TextView
             android:id="@+id/sGram"
             android:layout_width="wrap_content"
@@ -64,8 +53,7 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="center_horizontal"
-                android:visibility="gone"/>
+                android:layout_gravity="center_horizontal"/>
 
 
             <TextView
@@ -78,6 +66,17 @@
                 android:textSize="16sp"/>
 
         </LinearLayout>
+<!--        Definition Text-->
+        <TextView
+            android:id="@+id/defText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definition of the phrase"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
 <!--        Usage Layout 1-->
         <LinearLayout
             android:id="@+id/usageLayout1"
@@ -88,8 +87,7 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -201,8 +199,7 @@
                 android:fontFamily="@font/raleway_regular"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_gravity="bottom"
-                android:visibility="gone"/>
+                android:layout_gravity="bottom"/>
 
 
             <TextView
@@ -216,6 +213,17 @@
                 />
 
         </LinearLayout>
+        <!--        Definition Text2-->
+        <TextView
+            android:id="@+id/defText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definition of the phrase"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
         <!--        Usage Layout 2-->
         <LinearLayout
             android:id="@+id/usageLayout2"
@@ -226,8 +234,7 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -354,6 +361,17 @@
                 />
 
         </LinearLayout>
+        <!--        Definition Text 3-->
+        <TextView
+            android:id="@+id/defText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definition of the phrase"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
         <!--        Usage Layout 3-->
         <LinearLayout
             android:id="@+id/usageLayout3"
@@ -364,8 +382,7 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -480,7 +497,6 @@
                 android:layout_gravity="bottom"
                 android:visibility="gone"/>
 
-
             <TextView
                 android:id="@+id/drp4"
                 android:layout_width="match_parent"
@@ -492,6 +508,17 @@
                 />
 
         </LinearLayout>
+        <!--        Definition Text 4-->
+        <TextView
+            android:id="@+id/defText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definition of the phrase"
+            android:textColor="@color/blackText"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"/>
         <!--        Usage Layout 4-->
         <LinearLayout
             android:id="@+id/usageLayout4"
@@ -502,8 +529,7 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -542,7 +568,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
                 <TextView
                     android:id="@+id/eg4"

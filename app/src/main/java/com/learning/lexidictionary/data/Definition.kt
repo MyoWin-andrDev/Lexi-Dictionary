@@ -8,14 +8,14 @@ import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.model.learnerEdition.senseItem
 
 class Definition {
-    fun getDefinition(learnerDataItem: List<LearnerDataItem>) : List<*>{
+    fun getDefinition(learnerDataItem: List<LearnerDataItem>) : List<*>?{
         val sseqList = learnerDataItem[0].def[0].sseq[0][0] as List<*>
         //Retrieve the sense and the detail
         val sense = sseqList[0] as String
         val detail = sseqList[1] as Map<*, *>
         Log.d("detail", detail.toString())
         //Extract dt as List
-        val dt = detail["dt"] as List<*>
+        val dt = detail["dt"] as List<*>?
         Log.d("dt", dt.toString())
         return  dt
     }
