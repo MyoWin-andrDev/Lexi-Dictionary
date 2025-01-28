@@ -14,6 +14,7 @@ import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.Dro
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.model.learnerEdition.defDetail
+import com.learning.lexidictionary.model.learnerEdition.dt
 
 @RequiresApi(Build.VERSION_CODES.O)
 class DefinitionHandler(val context : Context, val wordId : String) {
@@ -103,6 +104,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
 
     fun retrieveUsageLogic(drosList : List<Dro>, index : Int, binding: AdditionalAdapter.AdditionalViewHolder){
         val dtList = drosList[index].def[0].sseq[0][0] as List<*>
+        var example = ""
         if(dtList[0] == "sense"){
             val senseItem = defClass.linkedTreeMapToSenseList(arrayOf(dtList[1]))
             //Subject/Status Labels: sls
@@ -113,7 +115,13 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                 val dtItem = senseItem[0].dt[0] as List<*>
                 val unknownValue = dtItem[0] as String
                 if( unknownValue == "text"){
-                    uiHandler.setPhraseExample(dtItem[1].toString(),index, binding)
+                    if(dtItem[1].toString().startsWith("{dx}see")){
+                        uiHandler.setPhraseGuidance(dtItem[1].toString(),index, binding)
+                    }
+                    else if(dtItem[1].toString().startsWith("{bc}")){
+                        uiHandler.setPhraseDef(dtItem[1].toString(),index, binding)
+                        example = dtItem[1].toString()
+                    }
                 }
                 if( unknownValue == "uns"){
                     val unsItem = dtItem[1] as List<*>

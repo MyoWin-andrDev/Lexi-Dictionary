@@ -114,6 +114,48 @@ class UIHandler(val context : Context, val wordId : String) {
             }
         }
     }
+    fun setPhraseGuidance(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
+        Log.d("setPhraseExample", usage)
+        when(index){
+            0 -> {
+                binding.binding.defText1.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.defText1.isVisible = true
+            }
+            1 -> {
+                binding.binding.defText2.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.defText2.isVisible = true
+            }
+            2 -> {
+                binding.binding.defText3.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.defText3.isVisible = true
+            }
+            3 -> {
+                binding.binding.defText4.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.defText4.isVisible = true
+            }
+        }
+    }
+    fun setPhraseDef(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
+        Log.d("setPhraseExample", usage)
+        when(index){
+            0 -> {
+                binding.binding.defText1.text = stringHandler.replaceBCString(usage)
+                binding.binding.defText1.isVisible = true
+            }
+            1 -> {
+                binding.binding.defText2.text = stringHandler.replaceBCString(usage)
+                binding.binding.defText2.isVisible = true
+            }
+            2 -> {
+                binding.binding.defText3.text = stringHandler.replaceBCString(usage)
+                binding.binding.defText3.isVisible = true
+            }
+            3 -> {
+                binding.binding.defText4.text = stringHandler.replaceBCString(usage)
+                binding.binding.defText4.isVisible = true
+            }
+        }
+    }
     //Subject/Status Labels: sls
     @SuppressLint("SetTextI18n")
     fun setSLS(status : String, index : Int, binding: AdditionalAdapter.AdditionalViewHolder){

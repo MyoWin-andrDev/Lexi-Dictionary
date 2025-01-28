@@ -23,7 +23,7 @@
             android:layout_marginStart="@dimen/one_x"
             android:fontFamily="@font/raleway_medium"
             android:text="Phrases"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -47,13 +47,13 @@
             <TextView
                 android:id="@+id/sls1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Informal : "
-                android:textColor="@color/blue"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/raleway_regular"
-                android:textStyle="bold"
+                android:text="Informal : "
+                android:textColor="@color/greyText"
                 android:textSize="16sp"
-                android:layout_gravity="center_horizontal"/>
+                android:textStyle="bold" />
 
 
             <TextView
@@ -61,8 +61,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="the act or process of organization"
-                android:textColor="@color/blackText"
+                android:textColor="@color/blue"
                 android:fontFamily="@font/opensans_medium"
+                android:textStyle="bold"
                 android:textSize="16sp"/>
 
         </LinearLayout>
@@ -195,10 +196,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
-                android:textColor="@color/blue"
                 android:fontFamily="@font/raleway_regular"
-                android:textStyle="bold"
+                android:textColor="@color/greyText"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 android:layout_gravity="bottom"/>
 
 
@@ -207,7 +208,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="the act or process of organization"
-                android:textColor="@color/blackText"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
                 android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
                 />
@@ -342,10 +344,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
-                android:textColor="@color/blue"
                 android:fontFamily="@font/raleway_regular"
-                android:textStyle="bold"
+                android:textColor="@color/greyText"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 android:layout_gravity="bottom"
                 android:visibility="gone"/>
 
@@ -355,7 +357,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="the act or process of organization"
-                android:textColor="@color/blackText"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
                 android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
                 />
@@ -490,10 +493,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informal : "
-                android:textColor="@color/blue"
                 android:fontFamily="@font/raleway_regular"
-                android:textStyle="bold"
+                android:textColor="@color/greyText"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 android:layout_gravity="bottom"
                 android:visibility="gone"/>
 
@@ -502,7 +505,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="the act or process of organization"
-                android:textColor="@color/blackText"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
                 android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
                 />

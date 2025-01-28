@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.data.Definition
-import com.learning.lexidictionary.databinding.DefinitonLayoutBinding
+import com.learning.lexidictionary.databinding.DefinitionLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerDataItem
 import com.learning.lexidictionary.handler.DefinitionHandler
 
@@ -18,14 +18,14 @@ class DefinitionAdapter(val context : Context, val learnerDataItemList : List<Le
     val defClass = Definition()
     val definitionList = defClass.getDefinition(learnerDataItemList)
 
-    class DefinitionViewHolder (val binding : DefinitonLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
+    class DefinitionViewHolder (val binding : DefinitionLayoutBinding ) : RecyclerView.ViewHolder(binding.root){
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DefinitionViewHolder {
        // TODO("Not yet implemented")
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = DefinitonLayoutBinding.inflate(layoutInflater)
+        val binding = DefinitionLayoutBinding.inflate(layoutInflater)
         return DefinitionViewHolder(binding)
     }
 

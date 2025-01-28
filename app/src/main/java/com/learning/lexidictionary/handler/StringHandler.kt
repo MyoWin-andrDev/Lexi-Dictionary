@@ -100,5 +100,10 @@ class StringHandler(val searchQuery: String, val context: Context) {
         return typefaceSearchQuery(word,searchQuery,context)
     }
 
+    fun highlightPhraseInExample(phrase : String, example : String){
+        val replacedString
+        spannableString = SpannableString(phrase)
+    }
+
 }
 
