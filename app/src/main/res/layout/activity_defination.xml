@@ -178,9 +178,9 @@
         app:layout_constraintStart_toStartOf="@id/definitionBox"
         app:layout_constraintEnd_toEndOf="@id/definitionBox"
         app:layout_constraintTop_toBottomOf="@id/seeMoreLayout1"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="@dimen/three_x"
         android:layout_marginBottom="@dimen/three_x"/>
+
 <!--        SeeMoreLayout 2-->
         <LinearLayout
             android:id="@+id/seeMoreLayout2"
@@ -225,6 +225,191 @@
                 app:layout_constraintTop_toBottomOf="@id/seeMoreLayout1"
                 android:paddingStart="@dimen/two_x"
                 android:paddingEnd="@dimen/two_x"/>
+
+        </LinearLayout>
+
+<!--        Lexical Field-->
+        <LinearLayout
+            android:id="@+id/lexicalField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seeMoreLayout2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/two_x"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Lexical Field"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/three_x"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lexicalRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/lexicalField"
+                app:layout_constraintTop_toBottomOf="@id/lexicalField"
+                android:layout_margin="@dimen/two_x"/>
+
+        </LinearLayout>
+
+        <!--        SeeMoreLayout 3-->
+        <LinearLayout
+            android:id="@+id/seeMoreLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lexicalField"
+            android:layout_margin="@dimen/one_x"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="@dimen/three_x"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/seeMoreMenu3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See More "
+                    android:textSize="12sp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:textColor="@color/greyText"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_icon"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seeMoreLayout1"
+                android:paddingStart="@dimen/two_x"
+                android:paddingEnd="@dimen/two_x"/>
+
+        </LinearLayout>
+
+        <!--        Synonym Field-->
+        <LinearLayout
+            android:id="@+id/synonymField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seeMoreLayout3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/two_x"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Synonyms"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/three_x"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/synonymRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/lexicalField"
+                app:layout_constraintTop_toBottomOf="@id/lexicalField"
+                android:layout_margin="@dimen/two_x"/>
+
+        </LinearLayout>
+
+
+        <!--        SeeMoreLayout 4-->
+        <LinearLayout
+            android:id="@+id/seeMoreLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/synonymField"
+            android:layout_margin="@dimen/one_x"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="@dimen/three_x"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/seeMoreMenu4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See More "
+                    android:textSize="12sp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:textColor="@color/greyText"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_icon"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seeMoreLayout1"
+                android:paddingStart="@dimen/two_x"
+                android:paddingEnd="@dimen/two_x"/>
+
+        </LinearLayout>
+
+        <!--        Lexical Field-->
+        <LinearLayout
+            android:id="@+id/antonymField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seeMoreLayout4"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/two_x"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Antonyms"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/three_x"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/antonymRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/lexicalField"
+                app:layout_constraintTop_toBottomOf="@id/lexicalField"
+                android:layout_margin="@dimen/two_x"/>
 
         </LinearLayout>
 
