@@ -100,9 +100,18 @@ class StringHandler(val searchQuery: String, val context: Context) {
         return typefaceSearchQuery(word,searchQuery,context)
     }
 
-    fun highlightPhraseInExample(phrase : String, example : String){
-        val replacedString
-        spannableString = SpannableString(phrase)
+    fun highlightPhraseInExample(example : String, phrase : String )  : SpannableString{
+        val replacedExample = example.replaceFirst("{it}", "").replaceFirst("{/it}", "")
+        spannableString = SpannableString(replacedExample)
+        val startIndex = replacedExample.indexOf(phrase, ignoreCase = true)
+        val endIndex = startIndex + phrase.length
+        spannableString.setSpan(
+            UnderlineSpan(),
+            startIndex,
+            endIndex,
+            SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        return spannableString
     }
 
 }

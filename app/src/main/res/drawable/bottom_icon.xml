@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:width="@dimen/three_x" android:height="@dimen/three_x">
+    <item android:width="@dimen/two_x" android:height="@dimen/two_x">
         <bitmap android:src="@drawable/bottom" android:tint="@color/greyText"/>
     </item>
 </layer-list>

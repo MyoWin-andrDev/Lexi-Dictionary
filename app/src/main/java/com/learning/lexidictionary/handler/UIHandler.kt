@@ -67,7 +67,7 @@ class UIHandler(val context : Context, val wordId : String) {
                 binding.binding.drp3.text = drp.capitalize()
                 binding.binding.drp3.isVisible = true
             }
-            in 3..20 -> {
+            3 -> {
                 binding.binding.drp4.text = drp.capitalize()
                 binding.binding.drp4.isVisible = true
             }
@@ -93,23 +93,23 @@ class UIHandler(val context : Context, val wordId : String) {
             }
         }
     }
-    fun setPhraseExample(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
+    fun setPhraseExample(usage : String , example : String, index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
         Log.d("setPhraseExample", usage)
         when(index){
             0 -> {
-                binding.binding.eg1.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.eg1.text = stringHandler.highlightPhraseInExample(usage, example)
                 binding.binding.eg1.isVisible = true
             }
             1 -> {
-                binding.binding.eg2.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.eg2.text = stringHandler.highlightPhraseInExample(usage, example)
                 binding.binding.eg2.isVisible = true
             }
             2 -> {
-                binding.binding.eg3.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.eg3.text = stringHandler.highlightPhraseInExample(usage, example)
                 binding.binding.eg3.isVisible = true
             }
             3 -> {
-                binding.binding.eg4.text = stringHandler.checkGuidanceWord(usage, wordId, context)
+                binding.binding.eg4.text = stringHandler.highlightPhraseInExample(usage, example)
                 binding.binding.eg4.isVisible = true
             }
         }
