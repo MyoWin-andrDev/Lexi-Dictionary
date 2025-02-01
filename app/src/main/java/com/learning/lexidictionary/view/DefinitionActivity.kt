@@ -6,9 +6,13 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.android.flexbox.FlexboxLayoutManager
 import com.learning.lexidictionary.adapter.AdditionalAdapter
 import com.learning.lexidictionary.adapter.DefinitionAdapter
+import com.learning.lexidictionary.adapter.LexicalAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
@@ -24,6 +28,7 @@ class DefinitionActivity : AppCompatActivity() {
     private lateinit var  binding : ActivityDefinationBinding
     private lateinit var wordId : String
     private lateinit var learnerData: List<LearnerData>
+    private var isStaggered = true
     private val url : String = "https://dictionaryapi.com/api/v3/references/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +37,15 @@ class DefinitionActivity : AppCompatActivity() {
         setContentView(binding.root)
         wordId = intent.getStringExtra("id").toString()
         Log.d("wordId",wordId)
+        initLayoutManager()
+        loadResultList(wordId)
+        seeMoreClicks()
+    }
+
+    private fun initLayoutManager(){
         binding.definitionRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.additionalRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-        loadResultList(wordId)
+        binding.lexicalRecycler.layoutManager = StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.GAP_HANDLING_NONE)
     }
 
     private fun loadResultList(wordId : String){
@@ -64,6 +75,26 @@ class DefinitionActivity : AppCompatActivity() {
                     DefinitionHandler(this@DefinitionActivity, wordId).getMainDef(learnerList, binding)
                     binding.definitionRecycler.adapter = DefinitionAdapter(this@DefinitionActivity, learnerList, wordId)
                     binding.additionalRecycler.adapter = AdditionalAdapter(this@DefinitionActivity, learnerList, wordId)
+                    val lexicalList = learnerDataItem.meta.stems
+                    binding.lexicalRecycler.adapter = LexicalAdapter(this@DefinitionActivity, lexicalList)
+
+                    //Lexical Field
+                    binding.seeMoreLayout3.setOnClickListener(){
+                        if(isStaggered) {
+                            binding.lexicalRecycler.layoutManager =
+                                FlexboxLayoutManager(this@DefinitionActivity)
+                            binding.lexicalRecycler.adapter = LexicalAdapter(this@DefinitionActivity, lexicalList)
+                            binding.seeMoreMenu3.text = " See Less "
+                            isStaggered = false
+                        }
+                        else{
+                            binding.lexicalRecycler.layoutManager =
+                                StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.GAP_HANDLING_NONE)
+                            binding.lexicalRecycler.adapter = LexicalAdapter(this@DefinitionActivity, lexicalList)
+                            binding.seeMoreMenu3.text = " See More "
+                            isStaggered = true
+                        }
+                    }
                 }
             }
 
@@ -73,5 +104,12 @@ class DefinitionActivity : AppCompatActivity() {
 
         })
     }
+
+    @SuppressLint("SetTextI18n")
+    private fun seeMoreClicks(){
+
+    }
+
+
 
 }

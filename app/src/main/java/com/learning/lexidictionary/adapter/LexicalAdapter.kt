@@ -1,12 +1,13 @@
 package com.learning.lexidictionary.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.lexidictionary.databinding.LexiItemBinding
 import com.learning.lexidictionary.model.learnerEdition.Meta
 
-class LexicalAdapter (val lexicalList: List<Meta>) : RecyclerView.Adapter<LexicalAdapter.LexicalViewHolder>() {
+class LexicalAdapter (val context : Context, val lexicalList: List<String>) : RecyclerView.Adapter<LexicalAdapter.LexicalViewHolder>() {
 
     class LexicalViewHolder(val binding : LexiItemBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -27,6 +28,7 @@ class LexicalAdapter (val lexicalList: List<Meta>) : RecyclerView.Adapter<Lexica
     override fun onBindViewHolder(holder: LexicalViewHolder, position: Int) {
         //TODO("Not yet implemented")
         val item = lexicalList[position]
+        holder.binding.lexiItem.text = item
 
     }
 }
