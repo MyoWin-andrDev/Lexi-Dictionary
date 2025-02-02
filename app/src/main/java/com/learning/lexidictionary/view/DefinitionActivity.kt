@@ -17,6 +17,7 @@ import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
 import com.learning.lexidictionary.handler.DefinitionHandler
+import com.learning.lexidictionary.model.thesaurus.Thesaurus
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,7 +30,8 @@ class DefinitionActivity : AppCompatActivity() {
     private lateinit var wordId : String
     private lateinit var learnerData: List<LearnerData>
     private var isStaggered = true
-    private val url : String = "https://dictionaryapi.com/api/v3/references/"
+    private val merriamWebsterUrl : String = "https://dictionaryapi.com/api/v3/references/"
+    private val thesaurusUrl : String = "https://api.api-ninjas.com/v1/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -39,6 +41,7 @@ class DefinitionActivity : AppCompatActivity() {
         Log.d("wordId",wordId)
         initLayoutManager()
         loadResultList(wordId)
+        loadThesaurusResult()
         seeMoreClicks()
     }
 
@@ -48,10 +51,11 @@ class DefinitionActivity : AppCompatActivity() {
         binding.lexicalRecycler.layoutManager = StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.GAP_HANDLING_NONE)
     }
 
+    //Merriam-Webster Retrofit
     private fun loadResultList(wordId : String){
         //Creating Retrofit Instance
         val retrofit = Retrofit.Builder()
-            .baseUrl(url)
+            .baseUrl(merriamWebsterUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val apiService = retrofit.create(DictionaryService::class.java)
@@ -100,6 +104,30 @@ class DefinitionActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<LearnerData>, t: Throwable) {
                 // TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    //Thesaurus Retrofit
+    private fun loadThesaurusResult(){
+        val retrofit = Retrofit.Builder()
+            .baseUrl(thesaurusUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val apiService = retrofit.create(DictionaryService::class.java)
+        val call = apiService.getThesaurusResult(wordId)
+        call.enqueue(object : Callback<Thesaurus>{
+            override fun onResponse(call: Call<Thesaurus>, response: Response<Thesaurus>) {
+                //TODO("Not yet implemented")
+                if(response.isSuccessful){
+                    val thesaurusList = response.body()
+                    Log.d("thesaurus", thesaurusList.toString())
+                }
+            }
+
+            override fun onFailure(call: Call<Thesaurus>, t: Throwable) {
+                TODO("Not yet implemented")
             }
 
         })

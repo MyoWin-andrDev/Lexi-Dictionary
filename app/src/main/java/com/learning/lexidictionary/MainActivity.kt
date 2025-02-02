@@ -36,9 +36,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val gson = GsonBuilder()
-            .setLenient()
-            .create()
         initLayoutManager()
         initListener();
     }
