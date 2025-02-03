@@ -112,7 +112,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                 uiHandler.setSLS(senseItem[0].sls[0], index, binding)
             }
             if (senseItem[0].dt != null) {
-                    val dtItem = senseItem[0].dt[0 ] as List<*>
+                    val dtItem = senseItem[0].dt[0] as List<*>
                     val unknownValue = dtItem[0] as String
                     when (unknownValue) {
                         "text" -> {
@@ -145,7 +145,11 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                             val visList = dtItem[1] as List<*>
                             val exampleList = Definition().linkedTreeMapToEgList(visList)
                             uiHandler.setPhraseExample(exampleList[0].t, drosList[index].drp, index, binding)
+                            Log.d("vis", exampleList[0].t)
                     }
+                        "sonte" -> {
+                            val snote =
+                        }
                 }
             }
         }
