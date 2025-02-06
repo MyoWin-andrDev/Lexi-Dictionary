@@ -57,7 +57,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                         val unsFirstIndex = unsItem[0] as List<*>
                         val textArray = unsFirstIndex[0] as List<String>// there is two values in it
                         if( textArray[0] == "text"){
-                            Log.d("usage", textArray[1])
+                            uiHandler.setDefUsage(textArray[1],index, binding)
                         }
                         val vis = unsFirstIndex[1] as List<*>
                         if( vis[0] == "vis"){
@@ -144,7 +144,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                             val textArray =
                                 unsFirstIndex[0] as List<String>// there is two values in it
                             if (textArray[0] == "text") {
-                                uiHandler.setUsage(textArray[1], index, binding)
+                                uiHandler.setPhraseUsage(textArray[1], index, binding)
                             }
                             if (unsFirstIndex.size !== 1) {
                                 val vis = unsFirstIndex[1] as List<*>

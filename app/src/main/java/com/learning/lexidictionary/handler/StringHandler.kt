@@ -18,6 +18,7 @@ import com.learning.lexidictionary.R
 
 class StringHandler(val searchQuery: String, val context: Context) {
     var spannableString = SpannableString(searchQuery)
+    val customFont = context.resources.getFont(R.font.opensans_italic_bold)
      fun  highlightSearchQuery(label : String, searchQuery : String, context : Context) : SpannableString {
         val spannableString = SpannableString(label)
         val startIndex = label.indexOf(searchQuery, ignoreCase = true)
@@ -38,7 +39,6 @@ class StringHandler(val searchQuery: String, val context: Context) {
         val newLabel = label.replace(Regex("\\{it\\}(.*?)\\{/it\\}"), "$1")
         val spannableString = SpannableString(newLabel)
         val startIndex = newLabel.indexOf(searchQuery, ignoreCase = true)
-        val customFont = context.resources.getFont(R.font.opensans_italic_bold)
         if(startIndex >= 0){
             val endIndex = startIndex + searchQuery.length
             spannableString.setSpan(
@@ -101,13 +101,36 @@ class StringHandler(val searchQuery: String, val context: Context) {
     }
 
     fun highlightPhraseInExample(example : String, phrase : String )  : SpannableString{
-        val replacedExample = example.replaceFirst("{it}", "").replaceFirst("{/it}", "").replaceFirst("{it}", "").replaceFirst("{/it}", "")
+        val replacedExample = example
+            .replace("{it}", "")
+            .replace("{/it}", "")
+            .replace("[=","(")
+            .replace("]",")")
         spannableString = SpannableString(replacedExample)
         val startIndex = replacedExample.indexOf(phrase, ignoreCase = true)
         val endIndex = startIndex + phrase.length
         if(startIndex != -1) {
             spannableString.setSpan(
                 UnderlineSpan(),
+                startIndex,
+                endIndex,
+                SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+        return spannableString
+    }
+
+    fun highlightUsage(phrase : String) : SpannableString {
+        val formattedString = phrase
+            .replace("+","used with : ")
+            .replace("{it}", "( ")
+            .replace("{/it}", " )")
+        spannableString = SpannableString(formattedString)
+        val startIndex = formattedString.indexOf("(")
+        val endIndex = formattedString.indexOf(")")
+        if(startIndex != -1) {
+            spannableString.setSpan(
+                CustomTypefaceSpan("", customFont),
                 startIndex,
                 endIndex,
                 SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE

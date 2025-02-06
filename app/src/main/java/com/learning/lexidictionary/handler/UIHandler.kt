@@ -33,6 +33,28 @@ class UIHandler(val context : Context, val wordId : String) {
             }
         }
     }
+
+    fun  setDefUsage(usage : String , index : Int , binding: DefinitionAdapter.DefinitionViewHolder){
+        when(index){
+            0 -> {
+                binding.binding.usage1.text = stringHandler.highlightUsage(usage)
+                binding.binding.usageLayout1.isVisible = true
+            }
+            1 -> {
+                binding.binding.usage2.text = stringHandler.highlightUsage(usage)
+                binding.binding.usageLayout2.isVisible = true
+            }
+            2 -> {
+                binding.binding.usage3.text = stringHandler.highlightUsage(usage)
+                binding.binding.usageLayout3.isVisible = true
+            }
+            3 -> {
+                binding.binding.usage4.text = stringHandler.highlightUsage(usage)
+                binding.binding.usageLayout4.isVisible = true
+            }
+        }
+    }
+
     fun setDefExample(t : String, index : Int, binding : DefinitionAdapter.DefinitionViewHolder){
         when(index){
             1 -> {
@@ -73,22 +95,22 @@ class UIHandler(val context : Context, val wordId : String) {
             }
         }
     }
-    fun  setUsage(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
+    fun  setPhraseUsage(usage : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
         when(index){
             0 -> {
-                binding.binding.usage1.text = usage
+                binding.binding.usage1.text = stringHandler.highlightUsage(usage)
                 binding.binding.usageLayout1.isVisible = true
             }
             1 -> {
-                binding.binding.usage2.text = usage
+                binding.binding.usage2.text = stringHandler.highlightUsage(usage)
                 binding.binding.usageLayout2.isVisible = true
             }
             2 -> {
-                binding.binding.usage3.text = usage
+                binding.binding.usage3.text = stringHandler.highlightUsage(usage)
                 binding.binding.usageLayout3.isVisible = true
             }
             3 -> {
-                binding.binding.usage4.text = usage
+                binding.binding.usage4.text = stringHandler.highlightUsage(usage)
                 binding.binding.usageLayout4.isVisible = true
             }
         }
