@@ -93,23 +93,22 @@ class UIHandler(val context : Context, val wordId : String) {
             }
         }
     }
-    fun setPhraseExample(usage : String , example : String, index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
-        Log.d("setPhraseExample", usage)
+    fun setPhraseExample(example : String, phrase : String , index : Int , binding: AdditionalAdapter.AdditionalViewHolder){
         when(index){
             0 -> {
-                binding.binding.eg1.text = stringHandler.highlightPhraseInExample(usage, example)
+                binding.binding.eg1.text = stringHandler.highlightPhraseInExample(example, phrase)
                 binding.binding.eg1.isVisible = true
             }
             1 -> {
-                binding.binding.eg2.text = stringHandler.highlightPhraseInExample(usage, example)
+                binding.binding.eg2.text = stringHandler.highlightPhraseInExample(example, phrase)
                 binding.binding.eg2.isVisible = true
             }
             2 -> {
-                binding.binding.eg3.text = stringHandler.highlightPhraseInExample(usage, example)
+                binding.binding.eg3.text = stringHandler.highlightPhraseInExample(example, phrase)
                 binding.binding.eg3.isVisible = true
             }
             3 -> {
-                binding.binding.eg4.text = stringHandler.highlightPhraseInExample(usage, example)
+                binding.binding.eg4.text = stringHandler.highlightPhraseInExample(example, phrase)
                 binding.binding.eg4.isVisible = true
             }
         }

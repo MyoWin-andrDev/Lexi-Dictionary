@@ -70,7 +70,7 @@
 <!--        Definition Text-->
         <TextView
             android:id="@+id/defText1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Definition of the phrase"
             android:textColor="@color/blackText"
@@ -131,7 +131,7 @@
 
                 <TextView
                     android:id="@+id/eg1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="The Organication of this painting is quite remarkable"
                     android:fontFamily="@font/opensans_regular"

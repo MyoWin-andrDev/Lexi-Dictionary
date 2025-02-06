@@ -13,10 +13,8 @@ class Definition {
         //Retrieve the sense and the detail
         val sense = sseqList[0] as String
         val detail = sseqList[1] as Map<*, *>
-        Log.d("detail", detail.toString())
         //Extract dt as List
         val dt = detail["dt"] as List<*>?
-        Log.d("dt", dt.toString())
         return  dt
     }
 
@@ -29,7 +27,6 @@ class Definition {
         val detail = sseqList[1] as Map<*, *>
         //Extract dt as List
         dt = detail["dt"] as List<*>
-        Log.d("dt", dt.toString())
         }
         return  dt
 

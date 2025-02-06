@@ -33,6 +33,9 @@ class AdditionalAdapter(val context : Context, val learnerItemList : List<Learne
     override fun onBindViewHolder(holder: AdditionalViewHolder, position: Int) {
         //TODO("Not yet implemented")
         val learnerItem = learnerItemList[position]
-        defHandlerClass.handlePhraseAndUsage(learnerItemList, 0, holder)
+        val drosList = learnerItemList[0].dros.indices
+        for(i in drosList) {
+            defHandlerClass.handlePhraseAndUsage(learnerItemList, i, holder)
+        }
     }
 }

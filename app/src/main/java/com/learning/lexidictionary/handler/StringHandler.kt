@@ -101,16 +101,18 @@ class StringHandler(val searchQuery: String, val context: Context) {
     }
 
     fun highlightPhraseInExample(example : String, phrase : String )  : SpannableString{
-        val replacedExample = example.replaceFirst("{it}", "").replaceFirst("{/it}", "")
+        val replacedExample = example.replaceFirst("{it}", "").replaceFirst("{/it}", "").replaceFirst("{it}", "").replaceFirst("{/it}", "")
         spannableString = SpannableString(replacedExample)
         val startIndex = replacedExample.indexOf(phrase, ignoreCase = true)
         val endIndex = startIndex + phrase.length
-        spannableString.setSpan(
-            UnderlineSpan(),
-            startIndex,
-            endIndex,
-            SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
+        if(startIndex != -1) {
+            spannableString.setSpan(
+                UnderlineSpan(),
+                startIndex,
+                endIndex,
+                SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
         return spannableString
     }
 

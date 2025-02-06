@@ -49,7 +49,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                     "vis" -> {
                         val visList = unknownList[1] as List<*>
                         val exampleList = Definition().linkedTreeMapToEgList(visList)
-                        Log.d("exampleT", exampleList[0].t)
+                        Log.d("visExample", exampleList[0].t)
                         uiHandler.setDefExample(exampleList[0].t, index, binding)
                     }
                     "uns" -> {
@@ -89,7 +89,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
     @SuppressLint("SuspiciousIndentation")
     fun handlePhraseAndUsage(learnerDataItem: List<LearnerDataItem>, index: Int, binding: AdditionalAdapter.AdditionalViewHolder){
         val dros = learnerDataItem[0].dros as? List<Dro>
-        val drosList = dros?.get(0)?.drp
+        val drosList = dros?.get(index)?.drp
         //Set Phrases
         dros?.indices?.forEach { i ->
             uiHandler.setPhrases(dros[i].drp, i , binding)
@@ -112,19 +112,34 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                 uiHandler.setSLS(senseItem[0].sls[0], index, binding)
             }
             if (senseItem[0].dt != null) {
-                    val dtItem = senseItem[0].dt[0] as List<*>
-                    val unknownValue = dtItem[0] as String
+                val dtItem = senseItem[0].dt
+                dtItem.indices.forEach { i ->
+                    val unknownList = dtItem[i] as List<*>
+                    val unknownValue = unknownList[0] as String
                     when (unknownValue) {
                         "text" -> {
-                            if (dtItem[1].toString().startsWith("{dx}see")) {
-                                uiHandler.setPhraseGuidance(dtItem[1].toString(), index, binding)
-                            } else if (dtItem[1].toString().startsWith("{bc}")) {
-                                uiHandler.setPhraseDef(dtItem[1].toString(), index, binding)
+                            if (unknownList[1].toString().startsWith("{dx}see")) {
+                                uiHandler.setPhraseGuidance(unknownList[1].toString(), index, binding)
+                            } else if (unknownList[1].toString().startsWith("{bc}")) {
+                                uiHandler.setPhraseDef(unknownList[1].toString(), index, binding)
                             }
                         }
 
+                        "vis" -> {
+                            val visList = unknownList[1] as List<*>
+                            val exampleList = Definition().linkedTreeMapToEgList(visList)
+                            Log.d("visExample", exampleList[0].t)
+                            Log.d("drosList", drosList[index].drp)
+                            uiHandler.setPhraseExample(
+                                exampleList[0].t,
+                                drosList[index].drp,
+                                index,
+                                binding
+                            )
+                        }
+
                         "uns" -> {
-                            val unsItem = dtItem[1] as List<*>
+                            val unsItem = unknownList[1] as List<*>
                             val unsFirstIndex = unsItem[0] as List<*>
                             val textArray =
                                 unsFirstIndex[0] as List<String>// there is two values in it
@@ -136,20 +151,20 @@ class DefinitionHandler(val context : Context, val wordId : String) {
                                 if (vis[0] == "vis") {
                                     val tList =
                                         Definition().linkedTreeMapToEgList(vis[1] as List<*>)
-                                    uiHandler.setPhraseExample(tList[0].t, drosList[index].drp, index, binding)
+                                    uiHandler.setPhraseExample(
+                                        tList[0].t,
+                                        drosList[index].drp,
+                                        index,
+                                        binding
+                                    )
                                 }
                             }
                         }
 
-                        "vis" -> {
-                            val visList = dtItem[1] as List<*>
-                            val exampleList = Definition().linkedTreeMapToEgList(visList)
-                            uiHandler.setPhraseExample(exampleList[0].t, drosList[index].drp, index, binding)
-                            Log.d("vis", exampleList[0].t)
+//                        "sonte" -> {
+//                            val snote =
+//                        }
                     }
-                        "sonte" -> {
-                            val snote =
-                        }
                 }
             }
         }
