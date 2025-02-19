@@ -30,7 +30,7 @@ class DefinitionHandler(val context : Context, val wordId : String) {
         val sSEQList = learnerDataItem[0].def[0].sseq[index][0] as List<*>
         //Decision Making of "sense" or "sen"
         val value = sSEQList[0] as String
-        if(value == "sense"){
+        if(value == "sense" || value == "bs"){
             val defDetail = Gson().fromJson(Gson().toJson(arrayOf(sSEQList[1])),Array<defDetail>::class.java).toList()
             val grammaticalLabel = defDetail[0].sgram //Non-Count
             val dtList = defDetail[0].dt

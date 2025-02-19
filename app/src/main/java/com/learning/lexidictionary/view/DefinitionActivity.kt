@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -17,6 +18,7 @@ import com.learning.lexidictionary.adapter.LexicalAdapter
 import com.learning.lexidictionary.adapter.SynonymAdapter
 import com.learning.lexidictionary.apiService.DictionaryService
 import com.learning.lexidictionary.databinding.ActivityDefinationBinding
+import com.learning.lexidictionary.databinding.DefinitionLayoutBinding
 import com.learning.lexidictionary.model.learnerEdition.LearnerData
 import com.learning.lexidictionary.handler.DefinitionHandler
 import com.learning.lexidictionary.model.learnerEdition.Meta
@@ -30,9 +32,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DefinitionActivity : AppCompatActivity() {
     private lateinit var  binding : ActivityDefinationBinding
+    private lateinit var defBinding : DefinitionLayoutBinding
     private lateinit var wordId : String
     private lateinit var learnerData: List<LearnerData>
     //Lexi Boolean
+    private var isDef = true
     private var isLexi = true
     private var isSynonym = true
     private var isAntonym = true
