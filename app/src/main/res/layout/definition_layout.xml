@@ -55,7 +55,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
         <!--        Usage Layout 1-->
         <LinearLayout
             android:id="@+id/usageLayout1"
@@ -66,7 +67,8 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +84,8 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/blackText"/>
+                android:textColor="@color/blackText"
+                />
 
         </LinearLayout>
         <!--        Phrases Box-->
@@ -115,7 +118,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/senDefEg2"
@@ -170,7 +174,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Usage Layout 2-->
         <LinearLayout
@@ -182,7 +187,8 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -232,7 +238,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/senShortDefEg2"
@@ -287,7 +294,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Usage Layout 3-->
         <LinearLayout
@@ -299,7 +307,8 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -349,7 +358,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/subSenDefEg2"
@@ -404,7 +414,8 @@
             android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:layout_marginTop="@dimen/one_x"
+            android:visibility="gone"/>
 
         <!--        Usage Layout 4-->
         <LinearLayout
@@ -416,7 +427,8 @@
             android:layout_marginStart="@dimen/two_x"
             android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -466,7 +478,8 @@
                     android:textStyle="bold"
                     android:drawableStart="@drawable/blue_view"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:layout_marginStart="@dimen/one_x"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/subSenShortDefEg2"

@@ -140,7 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginBottom="@dimen/three_x"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <TextView
                 android:id="@+id/seeMoreMenu"
@@ -198,7 +199,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginBottom="@dimen/three_x"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="invisible">
 
                 <TextView
                     android:id="@+id/seeMoreMenu2"
@@ -219,6 +221,7 @@
             </LinearLayout>
 
             <View
+                android:id="@+id/phraseView"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/grey"

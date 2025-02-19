@@ -133,7 +133,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topNavBar"/>
 
-<!--        <androidx.appcompat.widget.AppCompatEditText-->
+    <!--        <androidx.appcompat.widget.AppCompatEditText-->
 <!--            android:id="@+id/search_bar"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="@dimen/six_x"-->
@@ -149,7 +149,9 @@
 <!--            android:drawablePadding="@dimen/two_x"-->
 <!--            android:paddingEnd="@dimen/two_x"/>-->
 
-        <androidx.recyclerview.widget.RecyclerView
+
+
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

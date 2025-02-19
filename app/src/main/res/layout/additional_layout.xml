@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/additionalLayout"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -40,11 +42,11 @@
     <!--        Sense Def-->
     <LinearLayout
         android:id="@+id/phraseLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="404dp"
+        android:layout_height="97dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gerundLayout"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@id/gerundLayout">
 
         <LinearLayout
             android:id="@+id/phraseText"
@@ -63,58 +65,62 @@
                 android:text="Informal : "
                 android:textColor="@color/greyText"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
 
             <TextView
                 android:id="@+id/drp1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_medium"
                 android:text="the act or process of organization"
                 android:textColor="@color/blue"
-                android:fontFamily="@font/opensans_medium"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:textSize="16sp"/>
+                android:visibility="gone" />
 
         </LinearLayout>
-<!--        Definition Text-->
+        <!--        Definition Text-->
         <TextView
             android:id="@+id/defText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:fontFamily="@font/opensans_medium"
             android:text="Definition of the phrase"
             android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
-<!--        Usage Layout 1-->
+            android:visibility="gone" />
+        <!--        Usage Layout 1-->
         <LinearLayout
             android:id="@+id/usageLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/usage_background"
-            android:padding="@dimen/one_x"
             android:layout_marginStart="@dimen/two_x"
-            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:layout_marginEnd="@dimen/two_x"
+            android:background="@drawable/usage_background"
+            android:orientation="horizontal"
+            android:padding="@dimen/one_x"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usage : "
                 android:fontFamily="@font/opensans_italic"
-                android:textStyle="bold"
-                android:textColor="@color/grey_bright" />
+                android:text="Usage : "
+                android:textColor="@color/grey_bright"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/usage1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/blackText"/>
+                android:text=""
+                android:textColor="@color/blackText" />
 
         </LinearLayout>
 
@@ -123,14 +129,14 @@
             android:id="@+id/senDefEgLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/two_x">
+            android:layout_marginTop="@dimen/two_x"
+            android:orientation="horizontal">
 
             <View
                 android:layout_width="3dp"
                 android:layout_height="match_parent"
-                android:background="@color/blue"/>
+                android:background="@color/blue" />
 
             <!--            Phrases-->
             <LinearLayout
@@ -143,51 +149,52 @@
                     android:id="@+id/eg1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_regular"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/one_x"
                     android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="The Organication of this painting is quite remarkable"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/senDefEg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/senDefEg3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/senDefEg4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -205,24 +212,25 @@
                 android:id="@+id/sls2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Informal : "
+                android:layout_gravity="bottom"
                 android:fontFamily="@font/raleway_regular"
+                android:text="Informal : "
                 android:textColor="@color/greyText"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_gravity="bottom"/>
+                android:visibility="gone" />
 
 
             <TextView
                 android:id="@+id/drp2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_medium"
                 android:text="the act or process of organization"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
-                />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
         </LinearLayout>
         <!--        Definition Text2-->
@@ -230,39 +238,41 @@
             android:id="@+id/defText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:fontFamily="@font/opensans_medium"
             android:text="Definition of the phrase"
             android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:visibility="gone" />
         <!--        Usage Layout 2-->
         <LinearLayout
             android:id="@+id/usageLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/usage_background"
-            android:padding="@dimen/one_x"
             android:layout_marginStart="@dimen/two_x"
-            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:layout_marginEnd="@dimen/two_x"
+            android:background="@drawable/usage_background"
+            android:orientation="horizontal"
+            android:padding="@dimen/one_x"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usage : "
                 android:fontFamily="@font/opensans_italic"
-                android:textStyle="bold"
-                android:textColor="@color/grey_bright" />
+                android:text="Usage : "
+                android:textColor="@color/grey_bright"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/usage2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/blackText"/>
+                android:text=""
+                android:textColor="@color/blackText" />
 
         </LinearLayout>
 
@@ -271,14 +281,14 @@
             android:id="@+id/senShortDefEgLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/two_x">
+            android:layout_marginTop="@dimen/two_x"
+            android:orientation="horizontal">
 
             <View
                 android:layout_width="3dp"
                 android:layout_height="match_parent"
-                android:background="@color/blue"/>
+                android:background="@color/blue" />
 
             <!--            Phrases-->
             <LinearLayout
@@ -291,51 +301,52 @@
                     android:id="@+id/eg2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_regular"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/one_x"
                     android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="The Organication of this painting is quite remarkable"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/senShortDefEg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/senShortDefEg3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/senShortDefEg4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -353,25 +364,25 @@
                 android:id="@+id/sls3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Informal : "
+                android:layout_gravity="bottom"
                 android:fontFamily="@font/raleway_regular"
+                android:text="Informal : "
                 android:textColor="@color/greyText"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_gravity="bottom"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
 
             <TextView
                 android:id="@+id/drp3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_medium"
                 android:text="the act or process of organization"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
-                />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
         </LinearLayout>
         <!--        Definition Text 3-->
@@ -379,39 +390,41 @@
             android:id="@+id/defText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:fontFamily="@font/opensans_medium"
             android:text="Definition of the phrase"
             android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:visibility="gone" />
         <!--        Usage Layout 3-->
         <LinearLayout
             android:id="@+id/usageLayout3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/usage_background"
-            android:padding="@dimen/one_x"
             android:layout_marginStart="@dimen/two_x"
-            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:layout_marginEnd="@dimen/two_x"
+            android:background="@drawable/usage_background"
+            android:orientation="horizontal"
+            android:padding="@dimen/one_x"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usage : "
                 android:fontFamily="@font/opensans_italic"
-                android:textStyle="bold"
-                android:textColor="@color/grey_bright" />
+                android:text="Usage : "
+                android:textColor="@color/grey_bright"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/usage3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/blackText"/>
+                android:text=""
+                android:textColor="@color/blackText" />
 
         </LinearLayout>
 
@@ -420,14 +433,14 @@
             android:id="@+id/subSenDefEgLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/two_x">
+            android:layout_marginTop="@dimen/two_x"
+            android:orientation="horizontal">
 
             <View
                 android:layout_width="3dp"
                 android:layout_height="match_parent"
-                android:background="@color/blue"/>
+                android:background="@color/blue" />
 
             <!--            Phrases-->
             <LinearLayout
@@ -440,51 +453,52 @@
                     android:id="@+id/eg3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_regular"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/one_x"
                     android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="The Organication of this painting is quite remarkable"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/subSenDefEg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/subSenDefEg3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/subSenDefEg4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -502,24 +516,24 @@
                 android:id="@+id/sls4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Informal : "
+                android:layout_gravity="bottom"
                 android:fontFamily="@font/raleway_regular"
+                android:text="Informal : "
                 android:textColor="@color/greyText"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_gravity="bottom"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/drp4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_medium"
                 android:text="the act or process of organization"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:fontFamily="@font/opensans_medium"
                 android:textSize="16sp"
-                />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
         </LinearLayout>
         <!--        Definition Text 4-->
@@ -527,39 +541,41 @@
             android:id="@+id/defText4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/three_x"
+            android:layout_marginTop="@dimen/one_x"
+            android:fontFamily="@font/opensans_medium"
             android:text="Definition of the phrase"
             android:textColor="@color/blackText"
-            android:fontFamily="@font/opensans_medium"
             android:textSize="16sp"
-            android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/one_x"/>
+            android:visibility="gone" />
         <!--        Usage Layout 4-->
         <LinearLayout
             android:id="@+id/usageLayout4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/usage_background"
-            android:padding="@dimen/one_x"
             android:layout_marginStart="@dimen/two_x"
-            android:layout_marginEnd="@dimen/two_x"
             android:layout_marginTop="@dimen/one_x"
-            android:orientation="horizontal">
+            android:layout_marginEnd="@dimen/two_x"
+            android:background="@drawable/usage_background"
+            android:orientation="horizontal"
+            android:padding="@dimen/one_x"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usage : "
                 android:fontFamily="@font/opensans_italic"
-                android:textStyle="bold"
-                android:textColor="@color/grey_bright" />
+                android:text="Usage : "
+                android:textColor="@color/grey_bright"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/usage4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/blackText"/>
+                android:text=""
+                android:textColor="@color/blackText" />
 
         </LinearLayout>
 
@@ -568,14 +584,14 @@
             android:id="@+id/subSenShortDefEgLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="@dimen/three_x"
-            android:layout_marginTop="@dimen/two_x">
+            android:layout_marginTop="@dimen/two_x"
+            android:orientation="horizontal">
 
             <View
                 android:layout_width="3dp"
                 android:layout_height="match_parent"
-                android:background="@color/blue"/>
+                android:background="@color/blue" />
 
             <!--            Phrases-->
             <LinearLayout
@@ -587,51 +603,52 @@
                     android:id="@+id/eg4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_regular"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/one_x"
                     android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="The Organication of this painting is quite remarkable"
                     android:textColor="@color/grey_bright"
-                    android:layout_marginStart="@dimen/one_x"/>
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/subSenShortDefEg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/subSenShortDefEg3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/subSenShortDefEg4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The Organication of this painting is quite remarkable"
-                    android:fontFamily="@font/opensans_italic"
-                    android:textStyle="bold"
-                    android:drawableStart="@drawable/blue_view"
-                    android:textColor="@color/grey_bright"
                     android:layout_marginStart="@dimen/one_x"
                     android:layout_marginTop="@dimen/one_x"
-                    android:visibility="gone"/>
+                    android:drawableStart="@drawable/blue_view"
+                    android:fontFamily="@font/opensans_italic"
+                    android:text="The Organication of this painting is quite remarkable"
+                    android:textColor="@color/grey_bright"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
